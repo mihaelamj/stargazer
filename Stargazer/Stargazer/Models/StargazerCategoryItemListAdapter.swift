@@ -8,7 +8,10 @@
 
 import Foundation
 
-class StargazerCategoryItem {
+// MARK: -
+// MARK: Model Adapter -
+
+class StargazerCategoryItemListAdapter {
   var initials: String?
   var title: String?
   var subtitle: String?
@@ -16,6 +19,6 @@ class StargazerCategoryItem {
   var category: StargazerCategory?
 }
 
-protocol StargazerCategoryItemProtocol {
-  func asStargazerCategoryItem() -> StargazerCategoryItem
+protocol StargazerCategoryItemListAdapterProtocol {
+  func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter
 }
