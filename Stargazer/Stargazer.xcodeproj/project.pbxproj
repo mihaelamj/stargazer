@@ -17,6 +17,8 @@
 		A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0D522DBB2E700E26661 /* StargazerConstants.swift */; };
 		A980B0D822DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0D722DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift */; };
 		A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0D922DBB4DD00E26661 /* StargazerModels.swift */; };
+		A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DB22DBD30600E26661 /* DateUtil.swift */; };
+		A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DD22DBDFE800E26661 /* String+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		A980B0D522DBB2E700E26661 /* StargazerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerConstants.swift; sourceTree = "<group>"; };
 		A980B0D722DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCategoryItemListAdapter.swift; sourceTree = "<group>"; };
 		A980B0D922DBB4DD00E26661 /* StargazerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerModels.swift; sourceTree = "<group>"; };
+		A980B0DB22DBD30600E26661 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		A980B0DD22DBDFE800E26661 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +85,10 @@
 				A980B0D022DBABB900E26661 /* StargazerCategories.swift */,
 				A980B0D322DBADF800E26661 /* StargazerImages.swift */,
 				A980B0D522DBB2E700E26661 /* StargazerConstants.swift */,
+				A980B0DD22DBDFE800E26661 /* String+Helpers.swift */,
 				A980B0D722DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift */,
 				A980B0D922DBB4DD00E26661 /* StargazerModels.swift */,
+				A980B0DB22DBD30600E26661 /* DateUtil.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,
 				A980B0D822DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift in Sources */,
+				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
+				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
 				A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */,
 				A980B0BF22DBAB6100E26661 /* AppDelegate.swift in Sources */,
 			);
