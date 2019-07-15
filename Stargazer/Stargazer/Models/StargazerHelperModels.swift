@@ -114,6 +114,14 @@ extension CSVStringItems: CustomStringConvertible {
   }
 }
 
+extension CSVStringItems {
+  func toColorItems() -> [StargazerPersonColor]? {
+    guard let aItems = items else { return nil }
+    let res = aItems.map { return StargazerPersonColor(from: $0) }
+    return res
+  }
+}
+
 // Will be "unknown" if not known or "n/a" if the person does not have an eye.
 
 enum StargazerPersonColorType: String, CaseIterable {
@@ -152,6 +160,11 @@ struct StargazerPersonColor: Decodable {
       if type == .color { value = item }
     } catch {}
   }
+
+  init(from string: String) {
+    type = StargazerPersonColorType(with: string)
+    if type == .color { value = string }
+  }
 }
 
 extension StargazerPersonColor: CustomStringConvertible {
@@ -163,6 +176,9 @@ extension StargazerPersonColor: CustomStringConvertible {
     return result
   }
 }
+
+//"eye_colors": "blue, green, yellow, brown, golden, red"
+
 
 // "Male", "Female" or "unknown", "n/a"
 enum StargazerGender: String, CaseIterable {

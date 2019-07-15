@@ -212,9 +212,17 @@ class StargazerSpecie: StargazerBaseModel {
       averageLifespan = Int(lifeString)
     }
 
-    eyeColors = try values.decodeIfPresent([StargazerPersonColor].self, forKey: .eyeColors)
-    hairColors = try values.decodeIfPresent([StargazerPersonColor].self, forKey: .hairColors)
-    skinColors = try values.decodeIfPresent([StargazerPersonColor].self, forKey: .skinColors)
+    if let eyeColorItems = try values.decodeIfPresent(CSVStringItems.self, forKey: .eyeColors) {
+      eyeColors = eyeColorItems.toColorItems()
+    }
+
+    if let hairColorsItems = try values.decodeIfPresent(CSVStringItems.self, forKey: .hairColors) {
+      hairColors = hairColorsItems.toColorItems()
+    }
+
+    if let skinColorItems = try values.decodeIfPresent(CSVStringItems.self, forKey: .skinColors) {
+      skinColors = skinColorItems.toColorItems()
+    }
 
     language = try values.decodeIfPresent(String.self, forKey: .language)
     homeworld = try values.decodeIfPresent(UrlStringItem.self, forKey: .homeworld)
@@ -278,9 +286,7 @@ class StargazerFilm: StargazerBaseModel {
     openingCrawl = try values.decodeIfPresent(String.self, forKey: .openingCrawl)
     director = try values.decodeIfPresent(String.self, forKey: .director)
 
-    if let idString = try values.decodeIfPresent(String.self, forKey: .episodeId) {
-      episodeId = Int(idString)
-    }
+    episodeId = try values.decodeIfPresent(Int.self, forKey: .episodeId)
 
     producer = try values.decodeIfPresent(CSVStringItems.self, forKey: .producer)
 

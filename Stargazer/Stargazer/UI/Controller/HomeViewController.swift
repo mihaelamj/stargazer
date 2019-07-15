@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
   // MARK: -
   // MARK: IB Properties -
@@ -74,6 +74,34 @@ private extension HomeViewController {
 }
 
 // MARK: -
+// MARK: API -
+
+private extension HomeViewController {
+
+  func fetchItemsFor(_ category: StargazerCategory) {
+    setOperation(inProgress: true)
+
+    category.fetchItems { fetchedItems, error in
+      self.setOperation(inProgress: false)
+      guard let aItems = fetchedItems else {
+        self.errorAlert(message: error?.localizedDescription ?? "Unknown error!")
+        return
+      }
+
+      let itemsVC: CategoryItemsViewController? = UIViewController.loadFromStoryboard()
+      if let aVC = itemsVC {
+        self.navigationController?.pushViewController(aVC, animated: true)
+        aVC.title = category.title
+        aVC.data = aItems
+      } else {
+        self.errorAlert(message: error?.localizedDescription ?? "Unknown error!")
+      }
+    }
+  }
+
+}
+
+// MARK: -
 // MARK: UITableViewDataSource -
 
 extension HomeViewController: UITableViewDataSource {
@@ -83,7 +111,6 @@ extension HomeViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return data.count
     return 1
   }
 
@@ -118,11 +145,13 @@ extension HomeViewController: UITableViewDelegate {
     //To wake up the UI, Apple issue with cells with selectionStyle = .none
     CFRunLoopWakeUp(CFRunLoopGetCurrent())
 
-    let vc2: CategoryItemsViewController? = UIViewController.loadFromStoryboard()
-    if let aVC = vc2 {
-      debugPrint("v2c: \(aVC)")
-      navigationController?.pushViewController(aVC, animated: true)
-    }
+    fetchItemsFor(item)
+
+//    let vc2: CategoryItemsViewController? = UIViewController.loadFromStoryboard()
+//    if let aVC = vc2 {
+//      debugPrint("v2c: \(aVC)")
+//      navigationController?.pushViewController(aVC, animated: true)
+//    }
   }
 
 }

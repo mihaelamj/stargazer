@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryItemsViewController: UIViewController {
+class CategoryItemsViewController: BaseViewController {
 
   // MARK: -
   // MARK: IB Properties -
@@ -17,10 +17,12 @@ class CategoryItemsViewController: UIViewController {
 
   // MARK: -
   // MARK: Data -
+
+  private var didLoad = false
   
   var data: [StargazerBaseModel]? {
     didSet {
-      // reload
+      reloadData()
     }
   }
 
@@ -29,8 +31,10 @@ class CategoryItemsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "STAR WARS API"
+//    self.title = "STAR WARS API"
     setupTableView()
+    didLoad = true
+    reloadData()
   }
 
 }
@@ -40,12 +44,12 @@ class CategoryItemsViewController: UIViewController {
 
 private extension CategoryItemsViewController {
   func setupTableView() {
-//    tableView.delegate = self
+    tableView.delegate = self
     tableView.dataSource = self
     registerCells()
-    tableView.rowHeight = 56.0
+    tableView.rowHeight = 64.0
     tableView.tableFooterView = UIView()
-    tableView.separatorColor = .clear
+
     tableView.showsVerticalScrollIndicator = false
     tableView.backgroundColor = view.backgroundColor
   }
@@ -76,6 +80,17 @@ private extension CategoryItemsViewController {
 // MARK: API -
 
 private extension CategoryItemsViewController {
+  func reloadData() {
+    if didLoad {
+      tableView.reloadData()
+    }
+  }
+}
+
+// MARK: -
+// MARK: API -
+
+private extension CategoryItemsViewController {
   
 }
 
@@ -89,7 +104,7 @@ extension CategoryItemsViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let item = itemAt(indexPath.section) else { return UITableViewCell() }
+    guard let item = itemAt(indexPath.row) else { return UITableViewCell() }
     let aCell = dequeuTableCell(tableView, cellForRowAt: indexPath)
     let adapter = item.asStargazerCategoryItem()
     aCell.customize(any: adapter)

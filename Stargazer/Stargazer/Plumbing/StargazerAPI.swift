@@ -64,7 +64,7 @@ private extension StargazerCategory {
     // make request
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
-    request.timeoutInterval = 5
+    request.timeoutInterval = 55
 
     //execute request
     sendRequest(request: request) { data, error in

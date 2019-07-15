@@ -37,6 +37,9 @@
 		A9AEE46722DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */; };
 		A9AEE46822DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */; };
 		A9AEE46A22DD1CCC006B7DE3 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */; };
+		A9AEE46C22DD34CA006B7DE3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46B22DD34CA006B7DE3 /* BaseViewController.swift */; };
+		A9AEE46E22DD35E2006B7DE3 /* NetworkActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46D22DD35E2006B7DE3 /* NetworkActivityIndicator.swift */; };
+		A9AEE47022DD3779006B7DE3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46F22DD3779006B7DE3 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemDetailTableViewCell.xib; sourceTree = "<group>"; };
 		A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		A9AEE46B22DD34CA006B7DE3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A9AEE46D22DD35E2006B7DE3 /* NetworkActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicator.swift; sourceTree = "<group>"; };
+		A9AEE46F22DD3779006B7DE3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A980B0E322DC0A0E00E26661 /* StargazerAPI.swift */,
+				A9AEE46D22DD35E2006B7DE3 /* NetworkActivityIndicator.swift */,
 			);
 			path = Plumbing;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 		A980B0EB22DC41B800E26661 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A9AEE46B22DD34CA006B7DE3 /* BaseViewController.swift */,
 				A980B0F722DCE54A00E26661 /* HomeViewController.swift */,
 				A9AEE45A22DD11A0006B7DE3 /* CategoryItemsViewController.swift */,
 			);
@@ -168,6 +176,7 @@
 				A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */,
 				A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */,
 				A980B10222DD0DB200E26661 /* UITableView+Cell.swift */,
+				A9AEE46F22DD3779006B7DE3 /* UIViewController+Alert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -282,13 +291,16 @@
 				A9AEE46122DD164E006B7DE3 /* CircleInitialLabel.swift in Sources */,
 				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,
 				A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */,
+				A9AEE46E22DD35E2006B7DE3 /* NetworkActivityIndicator.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,
 				A980B0D822DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift in Sources */,
 				A980B10322DD0DB200E26661 /* UITableView+Cell.swift in Sources */,
 				A980B0FB22DCF60300E26661 /* MainCategoryTableViewCell.swift in Sources */,
+				A9AEE47022DD3779006B7DE3 /* UIViewController+Alert.swift in Sources */,
 				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
 				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
 				A9AEE45E22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift in Sources */,
+				A9AEE46C22DD34CA006B7DE3 /* BaseViewController.swift in Sources */,
 				A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */,
 				A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */,
 				A980B0BF22DBAB6100E26661 /* AppDelegate.swift in Sources */,
