@@ -28,6 +28,7 @@
 		A980B0FC22DCF60300E26661 /* MainCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0FA22DCF60300E26661 /* MainCategoryTableViewCell.xib */; };
 		A980B0FF22DCF9B600E26661 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */; };
 		A980B10122DCFB3800E26661 /* StargazerCategoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */; };
+		A980B10322DD0DB200E26661 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B10222DD0DB200E26661 /* UITableView+Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		A980B0FA22DCF60300E26661 /* MainCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCategoryAdapter.swift; sourceTree = "<group>"; };
+		A980B10222DD0DB200E26661 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				A980B0DD22DBDFE800E26661 /* String+Helpers.swift */,
 				A980B0D522DBB2E700E26661 /* StargazerConstants.swift */,
 				A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */,
+				A980B10222DD0DB200E26661 /* UITableView+Cell.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,
 				A980B0D822DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift in Sources */,
+				A980B10322DD0DB200E26661 /* UITableView+Cell.swift in Sources */,
 				A980B0FB22DCF60300E26661 /* MainCategoryTableViewCell.swift in Sources */,
 				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
 				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
