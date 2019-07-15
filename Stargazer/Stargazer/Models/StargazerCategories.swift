@@ -15,6 +15,10 @@ enum StargazerCategory: String, CaseIterable {
   case vehicles
   case species
   case planets
+
+  var title: String {
+    return rawValue.capitalized
+  }
 }
 
 extension StargazerCategory: CustomStringConvertible {

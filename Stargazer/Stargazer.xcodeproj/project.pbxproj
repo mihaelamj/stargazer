@@ -22,14 +22,12 @@
 		A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */; };
 		A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */; };
 		A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0E322DC0A0E00E26661 /* StargazerAPI.swift */; };
-		A980B0E822DC41A000E26661 /* HomeCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0E622DC41A000E26661 /* HomeCategoriesViewController.swift */; };
-		A980B0E922DC41A000E26661 /* HomeCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0E722DC41A000E26661 /* HomeCategoriesViewController.xib */; };
-		A980B0EE22DC41F500E26661 /* CategoryItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0EC22DC41F500E26661 /* CategoryItemsViewController.swift */; };
-		A980B0EF22DC41F500E26661 /* CategoryItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0ED22DC41F500E26661 /* CategoryItemsViewController.xib */; };
-		A980B0F222DC424900E26661 /* CategoryItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F022DC424900E26661 /* CategoryItemDetailViewController.swift */; };
-		A980B0F322DC424900E26661 /* CategoryItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0F122DC424900E26661 /* CategoryItemDetailViewController.xib */; };
 		A980B0F622DCDE5200E26661 /* UIViewController+xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */; };
 		A980B0F822DCE54A00E26661 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F722DCE54A00E26661 /* HomeViewController.swift */; };
+		A980B0FB22DCF60300E26661 /* MainCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F922DCF60300E26661 /* MainCategoryTableViewCell.swift */; };
+		A980B0FC22DCF60300E26661 /* MainCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0FA22DCF60300E26661 /* MainCategoryTableViewCell.xib */; };
+		A980B0FF22DCF9B600E26661 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */; };
+		A980B10122DCFB3800E26661 /* StargazerCategoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,14 +48,12 @@
 		A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerHelperModels.swift; sourceTree = "<group>"; };
 		A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerModelProperties.swift; sourceTree = "<group>"; };
 		A980B0E322DC0A0E00E26661 /* StargazerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerAPI.swift; sourceTree = "<group>"; };
-		A980B0E622DC41A000E26661 /* HomeCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoriesViewController.swift; sourceTree = "<group>"; };
-		A980B0E722DC41A000E26661 /* HomeCategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCategoriesViewController.xib; sourceTree = "<group>"; };
-		A980B0EC22DC41F500E26661 /* CategoryItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemsViewController.swift; sourceTree = "<group>"; };
-		A980B0ED22DC41F500E26661 /* CategoryItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemsViewController.xib; sourceTree = "<group>"; };
-		A980B0F022DC424900E26661 /* CategoryItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemDetailViewController.swift; sourceTree = "<group>"; };
-		A980B0F122DC424900E26661 /* CategoryItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemDetailViewController.xib; sourceTree = "<group>"; };
 		A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+xib.swift"; sourceTree = "<group>"; };
 		A980B0F722DCE54A00E26661 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A980B0F922DCF60300E26661 /* MainCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		A980B0FA22DCF60300E26661 /* MainCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCategoryAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +103,9 @@
 		A980B0D222DBABC600E26661 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A980B0D022DBABB900E26661 /* StargazerCategories.swift */,
 				A980B0D722DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift */,
+				A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */,
+				A980B0D022DBABB900E26661 /* StargazerCategories.swift */,
 				A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */,
 				A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */,
 				A980B0D922DBB4DD00E26661 /* StargazerModels.swift */,
@@ -129,6 +126,7 @@
 			children = (
 				A980B0D322DBADF800E26661 /* StargazerImages.swift */,
 				A980B0EB22DC41B800E26661 /* Controller */,
+				A980B0FD22DCF60900E26661 /* TableCells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -137,12 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				A980B0F722DCE54A00E26661 /* HomeViewController.swift */,
-				A980B0E622DC41A000E26661 /* HomeCategoriesViewController.swift */,
-				A980B0E722DC41A000E26661 /* HomeCategoriesViewController.xib */,
-				A980B0EC22DC41F500E26661 /* CategoryItemsViewController.swift */,
-				A980B0ED22DC41F500E26661 /* CategoryItemsViewController.xib */,
-				A980B0F022DC424900E26661 /* CategoryItemDetailViewController.swift */,
-				A980B0F122DC424900E26661 /* CategoryItemDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,6 +148,16 @@
 				A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A980B0FD22DCF60900E26661 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */,
+				A980B0F922DCF60300E26661 /* MainCategoryTableViewCell.swift */,
+				A980B0FA22DCF60300E26661 /* MainCategoryTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,11 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A980B0FC22DCF60300E26661 /* MainCategoryTableViewCell.xib in Resources */,
 				A980B0C922DBAB6600E26661 /* LaunchScreen.storyboard in Resources */,
 				A980B0C622DBAB6600E26661 /* Assets.xcassets in Resources */,
-				A980B0F322DC424900E26661 /* CategoryItemDetailViewController.xib in Resources */,
-				A980B0E922DC41A000E26661 /* HomeCategoriesViewController.xib in Resources */,
-				A980B0EF22DC41F500E26661 /* CategoryItemsViewController.xib in Resources */,
 				A980B0C422DBAB6100E26661 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,23 +232,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A980B0FF22DCF9B600E26661 /* BaseTableViewCell.swift in Sources */,
+				A980B10122DCFB3800E26661 /* StargazerCategoryAdapter.swift in Sources */,
 				A980B0F622DCDE5200E26661 /* UIViewController+xib.swift in Sources */,
 				A980B0D122DBABB900E26661 /* StargazerCategories.swift in Sources */,
 				A980B0D422DBADF800E26661 /* StargazerImages.swift in Sources */,
 				A980B0F822DCE54A00E26661 /* HomeViewController.swift in Sources */,
 				A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */,
-				A980B0F222DC424900E26661 /* CategoryItemDetailViewController.swift in Sources */,
 				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,
 				A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,
-				A980B0E822DC41A000E26661 /* HomeCategoriesViewController.swift in Sources */,
 				A980B0D822DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift in Sources */,
+				A980B0FB22DCF60300E26661 /* MainCategoryTableViewCell.swift in Sources */,
 				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
 				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
 				A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */,
 				A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */,
 				A980B0BF22DBAB6100E26661 /* AppDelegate.swift in Sources */,
-				A980B0EE22DC41F500E26661 /* CategoryItemsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
