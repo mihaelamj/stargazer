@@ -35,6 +35,14 @@ extension String {
   }
 }
 
+extension Date {
+  var shortUSDate: String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "mm/dd/yy"
+    return dateFormatter.string(from: self)
+  }
+}
+
 //Date().description(with: .current)  //  Tuesday, February 5, 2019 at 10:35:01 PM Brasilia Summer Time"
 //let dateString = Date().iso8601   //  "2019-02-06T00:35:01.746Z"
 //

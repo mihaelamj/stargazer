@@ -54,7 +54,6 @@ extension String {
       result = result + str
     }
     return result
-
   }
 
 }
