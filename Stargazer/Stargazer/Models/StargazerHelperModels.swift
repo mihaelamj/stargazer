@@ -132,7 +132,6 @@ enum StargazerPersonColorType: String, CaseIterable {
       self = .color
     }
   }
-
 }
 
 extension StargazerPersonColorType: CustomStringConvertible {

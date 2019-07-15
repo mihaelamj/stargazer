@@ -171,7 +171,7 @@ extension StargazerCategory {
     }
   }
 
-  static func fetchStarship(completion: @escaping (_ items: [StargazerStarship]?, _ error: Error?) -> Void) {
+  static func fetchStarships(completion: @escaping (_ items: [StargazerStarship]?, _ error: Error?) -> Void) {
     StargazerCategory.starships.fetchCollection(type: StargazerStarship.self) { resultDict, error in
       completion(resultDict?.results, error)
     }
@@ -229,6 +229,42 @@ extension StargazerCategory {
   static func fetchPlanet(id: Int, completion: @escaping (_ item: StargazerPlanet?, _ error: Error?) -> Void) {
     StargazerCategory.planets.fetchOne(id: id) { oneItem, error in
       completion(oneItem, error)
+    }
+  }
+
+}
+
+// MARK: -
+// MARK: Helper -
+
+extension StargazerCategory {
+
+  func fetchItems(completion: @escaping (_ items: [StargazerBaseModel]?, _ error: Error?) -> Void) {
+    switch self {
+    case .people:
+      StargazerCategory.fetchPeople { peopleItems, theError in
+        completion(peopleItems, theError)
+      }
+    case .films:
+      StargazerCategory.fetchFilms { filmItems, theError in
+        completion(filmItems, theError)
+      }
+    case .starships:
+      StargazerCategory.fetchStarships { starshipItems, theError in
+        completion(starshipItems, theError)
+      }
+    case .vehicles:
+      StargazerCategory.fetchVehicles { vehicleItems, theError in
+        completion(vehicleItems, theError)
+      }
+    case .species:
+      StargazerCategory.fetchSpecies { specieItems, theError in
+        completion(specieItems, theError)
+      }
+    case .planets:
+      StargazerCategory.fetchPlanets { planetItems, theError in
+        completion(planetItems, theError)
+      }
     }
   }
 

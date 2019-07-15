@@ -27,6 +27,10 @@ class StargazerModel: StargazerObjectModel, Codable {
   var created: Date? // string -- the ISO 8601 date format of the time that this resource was created.
   var edited: Date? // string -- the ISO 8601 date format of the time that this resource was edited.
 
+  var myId: Int? {
+    return urlString?.id
+  }
+
   private enum CodingKeys: String, CodingKey {
     case name
     case urlString = "url"
@@ -67,8 +71,12 @@ class StargazerModel: StargazerObjectModel, Codable {
   }
 }
 
-class StargazerBaseModel: StargazerModel {  
+class StargazerBaseModel: StargazerModel, StargazerCategoryItemListAdapterProtocol {
+  func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    preconditionFailure("`genericTableView` needs to be overriden by concrete subscasses")
+  }
 }
+
 
 // MARK: -
 // MARK: Person -
@@ -143,6 +151,14 @@ class StargazerPerson: StargazerBaseModel {
     vehicles = try values.decodeIfPresent(UrlStringItems.self, forKey: .vehicles)
     if let aVehicles = vehicles { aVehicles.category = .vehicles }
   }
+
+  override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    let initials = name?.initials(2) ?? ""
+    let title = name ?? "n/a"
+    let subtitle = birthYear ?? "n/a"
+    let date = created?.shortUSDate ?? "n/a"
+    return StargazerCategoryItemListAdapter(initials: initials, title: title, subtitle: subtitle, dateCreated: date, category: .people, id: myId)
+  }
 }
 
 // MARK: -
@@ -208,6 +224,17 @@ class StargazerSpecie: StargazerBaseModel {
 
     people = try values.decodeIfPresent(UrlStringItems.self, forKey: .people)
     if let aPeople = people { aPeople.category = .people }
+  }
+
+  // MARK: -
+  // MARK: Adapter -
+
+  override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    let initials = name?.initials(2) ?? ""
+    let title = name ?? "n/a"
+    let subtitle = classification ?? "n/a"
+    let date = created?.shortUSDate ?? "n/a"
+    return StargazerCategoryItemListAdapter(initials: initials, title: title, subtitle: subtitle, dateCreated: date, category: .species, id: myId)
   }
 }
 
@@ -276,6 +303,17 @@ class StargazerFilm: StargazerBaseModel {
     planets = try values.decodeIfPresent(UrlStringItems.self, forKey: .planets)
     if let aPlanets = planets { aPlanets.category = .planets }
   }
+
+  // MARK: -
+  // MARK: Adapter -
+
+  override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    let initials = title?.initials(2) ?? ""
+    let aTitle = title ?? "n/a"
+    let subtitle = openingCrawl ?? "n/a"
+    let date = created?.shortUSDate ?? "n/a"
+    return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
+  }
 }
 
 // MARK: -
@@ -312,12 +350,23 @@ class StargazerStarship: StargazerBaseModel {
     starshipClass = try values.decodeIfPresent(String.self, forKey: .starshipClass)
     mglt = try values.decodeIfPresent(String.self, forKey: .mglt)
   }
+
+  // MARK: -
+  // MARK: Adapter -
+
+  override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    let initials = name?.initials(2) ?? ""
+    let aTitle = name ?? "n/a"
+    let subtitle = vessel?.model ?? "n/a"
+    let date = created?.shortUSDate ?? "n/a"
+    return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
+  }
 }
 
 // MARK: -
 // MARK: Vehicle -
 
-class StargazerVehicle: StargazerModel {
+class StargazerVehicle: StargazerBaseModel {
   var vessel: StargazerVessel?
 
   var vehicleClass: String? // string -- The class of this vehicle, such as "Wheeled" or "Repulsorcraft".
@@ -338,6 +387,17 @@ class StargazerVehicle: StargazerModel {
     }
 
     vehicleClass = try values.decodeIfPresent(String.self, forKey: .vehicleClass)
+  }
+
+  // MARK: -
+  // MARK: Adapter -
+
+  override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    let initials = name?.initials(2) ?? ""
+    let aTitle = name ?? "n/a"
+    let subtitle = vessel?.model ?? "n/a"
+    let date = created?.shortUSDate ?? "n/a"
+    return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
   }
 }
 
@@ -406,6 +466,17 @@ class StargazerPlanet: StargazerBaseModel {
 
     films = try values.decodeIfPresent(UrlStringItems.self, forKey: .films)
     if let aFilms = films { aFilms.category = .films }
+  }
+
+  // MARK: -
+  // MARK: Adapter -
+
+  override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    let initials = name?.initials(2) ?? ""
+    let aTitle = name ?? "n/a"
+    var subtitle = "n/a"; if let aDieametar = diameter { subtitle = String(aDieametar) }
+    let date = created?.shortUSDate ?? "n/a"
+    return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
   }
 }
 

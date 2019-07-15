@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  CategoryItemsViewController.swift
 //  Stargazer
 //
 //  Created by Mihaela MJ on 15/07/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class CategoryItemsViewController: UIViewController {
 
   // MARK: -
   // MARK: IB Properties -
@@ -16,32 +16,31 @@ class HomeViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
 
   // MARK: -
-  // MARK: UI Properties -
-
-  private let cellSpacing: CGFloat = 6.0
-
-  // MARK: -
-  // MARK: Data Properties -
-
-  private  var data = StargazerCategory.allCases
+  // MARK: Data -
+  
+  var data: [StargazerBaseModel]? {
+    didSet {
+      // reload
+    }
+  }
 
   // MARK: -
   // MARK: FW Overrides -
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "STAR WARS API"
     setupTableView()
   }
+
 }
 
 // MARK: -
 // MARK: Setup -
 
-private extension HomeViewController {
-
+private extension CategoryItemsViewController {
   func setupTableView() {
-    tableView.delegate = self
+//    tableView.delegate = self
     tableView.dataSource = self
     registerCells()
     tableView.rowHeight = 56.0
@@ -55,62 +54,53 @@ private extension HomeViewController {
 // MARK: -
 // MARK: Helper -
 
-private extension HomeViewController {
+private extension CategoryItemsViewController {
 
-  func itemAt(_ index: Int) -> StargazerCategory? {
-    if data.count > index { return data[index] }
+  func itemAt(_ index: Int) -> StargazerBaseModel? {
+    guard let aData = data else { return nil }
+    if aData.count > index { return aData[index] }
     return nil
   }
 
-  func dequeuTableCell(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> MainCategoryTableViewCell {
-    let cell = aTableView.dequeueReusableCell(withIdentifier: MainCategoryTableViewCell.reuseIndetifier(), for: indexPath) as! MainCategoryTableViewCell
+  func dequeuTableCell(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> CategoryItemsTableViewCell {
+    let cell = aTableView.dequeueReusableCell(withIdentifier: CategoryItemsTableViewCell.reuseIndetifier(), for: indexPath) as! CategoryItemsTableViewCell
     return cell
   }
 
   func registerCells() {
-    tableView.registerCellNib(MainCategoryTableViewCell.self)
+    tableView.registerCellNib(CategoryItemsTableViewCell.self)
   }
+}
 
+// MARK: -
+// MARK: API -
+
+private extension CategoryItemsViewController {
+  
 }
 
 // MARK: -
 // MARK: UITableViewDataSource -
 
-extension HomeViewController: UITableViewDataSource {
-
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return data.count
-  }
+extension CategoryItemsViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//    return data.count
-    return 1
+    return data?.count ?? 0
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let item = itemAt(indexPath.section) else { return UITableViewCell() }
     let aCell = dequeuTableCell(tableView, cellForRowAt: indexPath)
-    let adapter = item.asStargazerCategory()
+    let adapter = item.asStargazerCategoryItem()
     aCell.customize(any: adapter)
     return aCell
   }
-
 }
 
 // MARK: -
 // MARK: UITableViewDelegate -
 
-extension HomeViewController: UITableViewDelegate {
-
-  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return cellSpacing
-  }
-
-  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let headerView = UIView()
-    headerView.backgroundColor = .clear
-    return headerView
-  }
+extension CategoryItemsViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let item = itemAt(indexPath.section) else { return }

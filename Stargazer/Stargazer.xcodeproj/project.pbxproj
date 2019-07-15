@@ -29,6 +29,14 @@
 		A980B0FF22DCF9B600E26661 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */; };
 		A980B10122DCFB3800E26661 /* StargazerCategoryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */; };
 		A980B10322DD0DB200E26661 /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B10222DD0DB200E26661 /* UITableView+Cell.swift */; };
+		A9AEE45B22DD11A0006B7DE3 /* CategoryItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE45A22DD11A0006B7DE3 /* CategoryItemsViewController.swift */; };
+		A9AEE45E22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE45C22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift */; };
+		A9AEE45F22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AEE45D22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib */; };
+		A9AEE46122DD164E006B7DE3 /* CircleInitialLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46022DD164E006B7DE3 /* CircleInitialLabel.swift */; };
+		A9AEE46422DD16A6006B7DE3 /* CategoryItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46322DD16A6006B7DE3 /* CategoryItemHeaderView.swift */; };
+		A9AEE46722DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */; };
+		A9AEE46822DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */; };
+		A9AEE46A22DD1CCC006B7DE3 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +64,14 @@
 		A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		A980B10022DCFB3800E26661 /* StargazerCategoryAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerCategoryAdapter.swift; sourceTree = "<group>"; };
 		A980B10222DD0DB200E26661 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
+		A9AEE45A22DD11A0006B7DE3 /* CategoryItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemsViewController.swift; sourceTree = "<group>"; };
+		A9AEE45C22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemsTableViewCell.swift; sourceTree = "<group>"; };
+		A9AEE45D22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemsTableViewCell.xib; sourceTree = "<group>"; };
+		A9AEE46022DD164E006B7DE3 /* CircleInitialLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleInitialLabel.swift; path = ../CircleInitialLabel.swift; sourceTree = "<group>"; };
+		A9AEE46322DD16A6006B7DE3 /* CategoryItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemHeaderView.swift; sourceTree = "<group>"; };
+		A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemDetailTableViewCell.swift; sourceTree = "<group>"; };
+		A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemDetailTableViewCell.xib; sourceTree = "<group>"; };
+		A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +145,7 @@
 				A980B0D322DBADF800E26661 /* StargazerImages.swift */,
 				A980B0EB22DC41B800E26661 /* Controller */,
 				A980B0FD22DCF60900E26661 /* TableCells */,
+				A9AEE46222DD1653006B7DE3 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -137,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A980B0F722DCE54A00E26661 /* HomeViewController.swift */,
+				A9AEE45A22DD11A0006B7DE3 /* CategoryItemsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -148,6 +166,7 @@
 				A980B0DD22DBDFE800E26661 /* String+Helpers.swift */,
 				A980B0D522DBB2E700E26661 /* StargazerConstants.swift */,
 				A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */,
+				A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */,
 				A980B10222DD0DB200E26661 /* UITableView+Cell.swift */,
 			);
 			path = Utils;
@@ -159,8 +178,21 @@
 				A980B0FE22DCF9B600E26661 /* BaseTableViewCell.swift */,
 				A980B0F922DCF60300E26661 /* MainCategoryTableViewCell.swift */,
 				A980B0FA22DCF60300E26661 /* MainCategoryTableViewCell.xib */,
+				A9AEE45C22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift */,
+				A9AEE45D22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib */,
+				A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */,
+				A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */,
 			);
 			path = TableCells;
+			sourceTree = "<group>";
+		};
+		A9AEE46222DD1653006B7DE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9AEE46022DD164E006B7DE3 /* CircleInitialLabel.swift */,
+				A9AEE46322DD16A6006B7DE3 /* CategoryItemHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A980B0FC22DCF60300E26661 /* MainCategoryTableViewCell.xib in Resources */,
+				A9AEE46822DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib in Resources */,
+				A9AEE45F22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib in Resources */,
 				A980B0C922DBAB6600E26661 /* LaunchScreen.storyboard in Resources */,
 				A980B0C622DBAB6600E26661 /* Assets.xcassets in Resources */,
 				A980B0C422DBAB6100E26661 /* Main.storyboard in Resources */,
@@ -237,11 +271,15 @@
 			files = (
 				A980B0FF22DCF9B600E26661 /* BaseTableViewCell.swift in Sources */,
 				A980B10122DCFB3800E26661 /* StargazerCategoryAdapter.swift in Sources */,
+				A9AEE45B22DD11A0006B7DE3 /* CategoryItemsViewController.swift in Sources */,
 				A980B0F622DCDE5200E26661 /* UIViewController+xib.swift in Sources */,
 				A980B0D122DBABB900E26661 /* StargazerCategories.swift in Sources */,
 				A980B0D422DBADF800E26661 /* StargazerImages.swift in Sources */,
+				A9AEE46422DD16A6006B7DE3 /* CategoryItemHeaderView.swift in Sources */,
 				A980B0F822DCE54A00E26661 /* HomeViewController.swift in Sources */,
+				A9AEE46722DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift in Sources */,
 				A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */,
+				A9AEE46122DD164E006B7DE3 /* CircleInitialLabel.swift in Sources */,
 				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,
 				A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,
@@ -250,9 +288,11 @@
 				A980B0FB22DCF60300E26661 /* MainCategoryTableViewCell.swift in Sources */,
 				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
 				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
+				A9AEE45E22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift in Sources */,
 				A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */,
 				A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */,
 				A980B0BF22DBAB6100E26661 /* AppDelegate.swift in Sources */,
+				A9AEE46A22DD1CCC006B7DE3 /* UIViewController+Storyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
