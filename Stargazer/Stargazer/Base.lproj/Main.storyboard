@@ -25,17 +25,42 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="root/ensigns" translatesAutoresizingMaskIntoConstraints="NO" id="e46-uT-cQJ" userLabel="BadgesIV">
                                 <rect key="frame" x="0.0" y="653" width="414" height="121"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oh-LH-Vrn" userLabel="CenterV">
+                                <rect key="frame" x="0.0" y="242.5" width="414" height="410.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Explore the Star Wars Universe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkj-1x-pIt" userLabel="TitleLabel">
+                                <rect key="frame" x="20" y="111" width="237" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UN-Hl-KEt" userLabel="DescLable">
+                                <rect key="frame" x="20" y="155" width="367" height="70"/>
+                                <string key="text">Orbiting the planet at maximum velocity. The moon with the Rebel base will be in range in thirty minutes. This will be a day long remembered.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="Colors/BackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3oh-LH-Vrn" secondAttribute="trailing" id="3mL-zI-b1K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e46-uT-cQJ" secondAttribute="trailing" id="Cxh-wz-Y9F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e46-uT-cQJ" secondAttribute="bottom" id="IUo-kq-eib"/>
+                            <constraint firstItem="7UN-Hl-KEt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-8" id="MB9-c3-8hG"/>
+                            <constraint firstItem="7UN-Hl-KEt" firstAttribute="top" secondItem="bkj-1x-pIt" secondAttribute="bottom" constant="10" id="Y03-iT-tAH"/>
                             <constraint firstItem="f8D-vZ-sL3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b7d-gD-Njc"/>
+                            <constraint firstItem="3oh-LH-Vrn" firstAttribute="bottom" secondItem="e46-uT-cQJ" secondAttribute="top" id="ccV-7R-Fua"/>
+                            <constraint firstItem="7UN-Hl-KEt" firstAttribute="bottom" secondItem="f8D-vZ-sL3" secondAttribute="bottom" constant="-2" id="hGX-vb-R0r"/>
+                            <constraint firstItem="3oh-LH-Vrn" firstAttribute="top" secondItem="f8D-vZ-sL3" secondAttribute="bottom" id="jJ9-Aj-UW1"/>
+                            <constraint firstItem="3oh-LH-Vrn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kFL-O2-5tN"/>
                             <constraint firstItem="f8D-vZ-sL3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oOk-ea-lUo"/>
                             <constraint firstItem="e46-uT-cQJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="rZv-MW-6L8"/>
                             <constraint firstItem="f8D-vZ-sL3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="roc-c3-e38"/>
                             <constraint firstItem="e46-uT-cQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y2b-YC-Iiz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f8D-vZ-sL3" secondAttribute="trailing" id="yN7-65-FnX"/>
+                            <constraint firstItem="7UN-Hl-KEt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="yhb-ob-0Os"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
