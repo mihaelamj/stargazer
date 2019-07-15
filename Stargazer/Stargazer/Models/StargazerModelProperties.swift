@@ -38,11 +38,38 @@ func testProps() {
   print("props \(props)")
 }
 
-func testAPIAll() {
-  StargazerCategory.fetchFilms { (films, error) in
-    if let aFilms = films {
-      if let aFlm = aFilms.first {
-        let props = aFlm.getAllPropertyValues()
+func testAPIPeople() {
+//  StargazerCategory.fetchFilmsOld { (films, error) in
+//    if let aFilms = films {
+//      if let aFlm = aFilms.first {
+//        let props = aFlm.getAllPropertyValues()
+//      }
+//    }
+//    if let aError = error {
+//      debugPrint("error: \(aError)")
+//    }
+//  }
+
+  StargazerCategory.fetchPeople { items, error in
+    if let aItems = items {
+      if let aItem = aItems.first {
+        let props = aItem.getAllPropertyValues()
+        debugPrint("props: \(props)")
+      }
+    }
+    if let aError = error {
+      debugPrint("error: \(aError)")
+    }
+  }
+}
+
+func testAPIVehciles() {
+
+  StargazerCategory.fetchVehicles { items, error in
+    if let aItems = items {
+      if let aItem = aItems.first {
+        let props = aItem.getAllPropertyValues()
+        debugPrint("props: \(props)")
       }
     }
     if let aError = error {

@@ -201,7 +201,7 @@ extension StargazerGender: CustomStringConvertible {
 class StargazerVessel: StargazerObjectModel {
   var model: String? // string -- The model or official name of this starship. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station".
   var manufacturer: CSVStringItems? // string -- The manufacturer of this starship. Comma separated if more than one. "Imperial Department of Military Research, Sienar Fleet Systems"
-  var length: Int? // string -- The length of this starship in meters.
+  var length: Double? // string -- The length of this starship in meters.
   var costInCredits: UInt? // string -- The cost of this starship new, in galactic credits.
   var crew: Int? // string -- The number of personnel needed to run or pilot this starship.
   var passengers: Int? // string -- The number of non-essential people this starship can transport.
@@ -246,8 +246,8 @@ class StargazerVessel: StargazerObjectModel {
 
     manufacturer = try values.decodeIfPresent(CSVStringItems.self, forKey: .manufacturer)
 
-    if let intLength = try values.decodeIfPresent(String.self, forKey: .length) {
-      length = Int(intLength)
+    if let dblLength = try values.decodeIfPresent(String.self, forKey: .length) {
+      length = Double(dblLength)
     }
 
     if let uintCost = try values.decodeIfPresent(String.self, forKey: .costInCredits) {
@@ -277,3 +277,4 @@ class StargazerVessel: StargazerObjectModel {
 
   }
 }
+

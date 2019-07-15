@@ -11,8 +11,6 @@ import Foundation
 // MARK: -
 // MARK: Main Model -
 
-
-
 class StargazerObjectModel {
 }
 
@@ -69,12 +67,7 @@ class StargazerModel: StargazerObjectModel, Codable {
   }
 }
 
-class StargazerBaseModel: StargazerModel {
-
-//  override func getAllPropertyValues() -> [StargazerObjectModel.PropertyTouple] {
-//
-//  }
-  
+class StargazerBaseModel: StargazerModel {  
 }
 
 // MARK: -
