@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
 //    testProps()
 //    testAPIStarship()
+    let init1 = "Ana".initials(3)
+    let init2 = "Ana Ina maja   hela".initials(2)
+    let init3 = "Maya Obregon    maja   hela".initials(3)
     testAPIVehciles()
     return true
   }

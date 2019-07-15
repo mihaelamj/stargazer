@@ -8,13 +8,6 @@
 
 import Foundation
 
-//{
-//  "count": 87,
-//  "next": "https://swapi.co/api/people/?page=2",
-//  "previous": null,
-//  "results": []
-//}
-
 func testProps() {
   let model = StargazerModel(name: "Name", category: .planets, created: Date(), urlString: "https://swapi.co/api/films/1/")
 

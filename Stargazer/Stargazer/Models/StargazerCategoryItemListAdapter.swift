@@ -11,14 +11,31 @@ import Foundation
 // MARK: -
 // MARK: Model Adapter -
 
-class StargazerCategoryItemListAdapter {
+struct StargazerCategoryItemListAdapter {
   var initials: String?
   var title: String?
   var subtitle: String?
   var dateCreated: String?
   var category: StargazerCategory?
+
+  init(initials: String, title: String, subtitle: String, dateCreated: String, category: StargazerCategory) {
+    self.initials = initials
+    self.title = title
+    self.subtitle = subtitle
+    self.dateCreated = dateCreated
+    self.category = category
+  }
 }
 
 protocol StargazerCategoryItemListAdapterProtocol {
   func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter
 }
+
+// MARK: -
+// MARK: Adapters -
+
+//extension StargazerPerson: StargazerCategoryItemListAdapterProtocol {
+//  func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+//
+//  }
+//}
