@@ -32,16 +32,6 @@ func testProps() {
 }
 
 func testAPIPeople() {
-//  StargazerCategory.fetchFilmsOld { (films, error) in
-//    if let aFilms = films {
-//      if let aFlm = aFilms.first {
-//        let props = aFlm.getAllPropertyValues()
-//      }
-//    }
-//    if let aError = error {
-//      debugPrint("error: \(aError)")
-//    }
-//  }
 
   StargazerCategory.fetchPeople { items, error in
     if let aItems = items {

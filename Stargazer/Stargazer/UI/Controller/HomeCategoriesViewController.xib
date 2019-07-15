@@ -1,22 +1,56 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeCategoriesViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeCategoriesViewController" customModule="Stargazer" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="mainView" destination="pa0-ue-YLd" id="gs0-YD-DCz"/>
+                <outlet property="view" destination="pa0-ue-YLd" id="TgN-bA-aUL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-        </view>
+        <viewController id="n7a-NT-dFb" customClass="HomeCategoriesViewController" customModule="Stargazer" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="pa0-ue-YLd" userLabel="HomeView">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="root/application_root_header" translatesAutoresizingMaskIntoConstraints="NO" id="iSn-sW-fpf" userLabel="Back Image View">
+                        <rect key="frame" x="0.0" y="44" width="414" height="231"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="root/ensigns" translatesAutoresizingMaskIntoConstraints="NO" id="pGQ-t6-dQe" userLabel="Emblem Image View">
+                        <rect key="frame" x="0.0" y="730.5" width="414" height="131.5"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="Colors/BackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="5Zo-0A-N75" firstAttribute="trailing" secondItem="iSn-sW-fpf" secondAttribute="trailing" id="72W-2m-zoN"/>
+                    <constraint firstItem="5Zo-0A-N75" firstAttribute="bottom" secondItem="pGQ-t6-dQe" secondAttribute="bottom" id="Dee-zO-YC1"/>
+                    <constraint firstItem="iSn-sW-fpf" firstAttribute="leading" secondItem="5Zo-0A-N75" secondAttribute="leading" id="H4U-bN-zvg"/>
+                    <constraint firstItem="iSn-sW-fpf" firstAttribute="top" secondItem="5Zo-0A-N75" secondAttribute="top" id="TZ2-8C-xIm"/>
+                    <constraint firstItem="5Zo-0A-N75" firstAttribute="trailing" secondItem="pGQ-t6-dQe" secondAttribute="trailing" id="dHr-sC-8az"/>
+                    <constraint firstItem="pGQ-t6-dQe" firstAttribute="height" secondItem="pa0-ue-YLd" secondAttribute="height" multiplier="0.147" id="kX7-Kf-dwd"/>
+                    <constraint firstItem="iSn-sW-fpf" firstAttribute="height" secondItem="pa0-ue-YLd" secondAttribute="height" multiplier="0.258" id="rNF-Gn-v1h"/>
+                    <constraint firstItem="pGQ-t6-dQe" firstAttribute="leading" secondItem="5Zo-0A-N75" secondAttribute="leading" id="tvh-FT-Xl0"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="5Zo-0A-N75"/>
+            </view>
+            <point key="canvasLocation" x="-14" y="139"/>
+        </viewController>
     </objects>
+    <resources>
+        <image name="root/application_root_header" width="375" height="226"/>
+        <image name="root/ensigns" width="179" height="80"/>
+        <namedColor name="Colors/BackgroundColor">
+            <color red="0.96470588235294119" green="0.98039215686274506" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -10,7 +10,13 @@ import UIKit
 
 class HomeCategoriesViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet weak var mainView: UIView!
+
+  override public func loadView() {
+    self.view = self.mainView
+  }
+
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

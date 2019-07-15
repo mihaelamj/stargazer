@@ -28,6 +28,8 @@
 		A980B0EF22DC41F500E26661 /* CategoryItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0ED22DC41F500E26661 /* CategoryItemsViewController.xib */; };
 		A980B0F222DC424900E26661 /* CategoryItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F022DC424900E26661 /* CategoryItemDetailViewController.swift */; };
 		A980B0F322DC424900E26661 /* CategoryItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A980B0F122DC424900E26661 /* CategoryItemDetailViewController.xib */; };
+		A980B0F622DCDE5200E26661 /* UIViewController+xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */; };
+		A980B0F822DCE54A00E26661 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0F722DCE54A00E26661 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		A980B0ED22DC41F500E26661 /* CategoryItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemsViewController.xib; sourceTree = "<group>"; };
 		A980B0F022DC424900E26661 /* CategoryItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemDetailViewController.swift; sourceTree = "<group>"; };
 		A980B0F122DC424900E26661 /* CategoryItemDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemDetailViewController.xib; sourceTree = "<group>"; };
+		A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+xib.swift"; sourceTree = "<group>"; };
+		A980B0F722DCE54A00E26661 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 		A980B0EB22DC41B800E26661 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A980B0F722DCE54A00E26661 /* HomeViewController.swift */,
 				A980B0E622DC41A000E26661 /* HomeCategoriesViewController.swift */,
 				A980B0E722DC41A000E26661 /* HomeCategoriesViewController.xib */,
 				A980B0EC22DC41F500E26661 /* CategoryItemsViewController.swift */,
@@ -148,6 +153,7 @@
 				A980B0DB22DBD30600E26661 /* DateUtil.swift */,
 				A980B0DD22DBDFE800E26661 /* String+Helpers.swift */,
 				A980B0D522DBB2E700E26661 /* StargazerConstants.swift */,
+				A980B0F522DCDE5200E26661 /* UIViewController+xib.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -226,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A980B0F622DCDE5200E26661 /* UIViewController+xib.swift in Sources */,
 				A980B0D122DBABB900E26661 /* StargazerCategories.swift in Sources */,
 				A980B0D422DBADF800E26661 /* StargazerImages.swift in Sources */,
+				A980B0F822DCE54A00E26661 /* HomeViewController.swift in Sources */,
 				A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */,
 				A980B0F222DC424900E26661 /* CategoryItemDetailViewController.swift in Sources */,
 				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,

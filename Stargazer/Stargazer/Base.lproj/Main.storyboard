@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Src-Sq-t0K">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController title="STAR WARS API" id="BYZ-38-t0r" userLabel="Home View Controller" customClass="HomeViewController" customModule="Stargazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="HomeView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="root/application_root_header" translatesAutoresizingMaskIntoConstraints="NO" id="f8D-vZ-sL3" userLabel="BackIV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="242.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="root/ensigns" translatesAutoresizingMaskIntoConstraints="NO" id="e46-uT-cQJ" userLabel="BadgesIV">
+                                <rect key="frame" x="0.0" y="653" width="414" height="121"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="Colors/BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e46-uT-cQJ" secondAttribute="trailing" id="Cxh-wz-Y9F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e46-uT-cQJ" secondAttribute="bottom" id="IUo-kq-eib"/>
+                            <constraint firstItem="f8D-vZ-sL3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b7d-gD-Njc"/>
+                            <constraint firstItem="f8D-vZ-sL3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oOk-ea-lUo"/>
+                            <constraint firstItem="e46-uT-cQJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="rZv-MW-6L8"/>
+                            <constraint firstItem="f8D-vZ-sL3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="roc-c3-e38"/>
+                            <constraint firstItem="e46-uT-cQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y2b-YC-Iiz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f8D-vZ-sL3" secondAttribute="trailing" id="yN7-65-FnX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kSH-Bk-ljs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--STAR WARS API-->
+        <scene sceneID="GgF-1c-WvM">
+            <objects>
+                <navigationController title="STAR WARS API" automaticallyAdjustsScrollViewInsets="NO" id="Src-Sq-t0K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="CH7-cY-ifG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="Colors/BackgroundColor"/>
+                        <color key="barTintColor" name="Colors/NavBarColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NYl-uA-Pv1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PnF-Oj-Ahw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="665.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="root/application_root_header" width="375" height="226"/>
+        <image name="root/ensigns" width="179" height="80"/>
+        <namedColor name="Colors/BackgroundColor">
+            <color red="0.96470588235294119" green="0.98039215686274506" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Colors/NavBarColor">
+            <color red="0.19215686274509805" green="0.19607843137254902" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
