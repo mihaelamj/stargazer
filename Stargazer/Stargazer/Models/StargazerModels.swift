@@ -11,6 +11,8 @@ import Foundation
 // MARK: -
 // MARK: Main Model -
 
+
+
 class StargazerObjectModel {
 }
 
@@ -67,10 +69,18 @@ class StargazerModel: StargazerObjectModel, Codable {
   }
 }
 
+class StargazerBaseModel: StargazerModel {
+
+//  override func getAllPropertyValues() -> [StargazerObjectModel.PropertyTouple] {
+//
+//  }
+  
+}
+
 // MARK: -
 // MARK: Person -
 
-class StargazerPerson: StargazerModel {
+class StargazerPerson: StargazerBaseModel {
   var birthYear: String? // string -- The birth year of the person, using the in-universe standard of BBY or ABY - Before the Battle of Yavin or After the Battle of Yavin. The Battle of Yavin is a battle that occurs at the end of Star Wars episode IV: A New Hope.
 
   var eyeColor: StargazerPersonColor? // string -- The eye color of this person. Will be "unknown" if not known or "n/a" if the person does not have an eye.
@@ -118,11 +128,11 @@ class StargazerPerson: StargazerModel {
       gender = StargazerGender(with: genderString)
     }
 
-    if let heightString = try values.decodeIfPresent(Int.self, forKey: .height) {
+    if let heightString = try values.decodeIfPresent(String.self, forKey: .height) {
       height = Int(heightString)
     }
 
-    if let massString = try values.decodeIfPresent(Int.self, forKey: .mass) {
+    if let massString = try values.decodeIfPresent(String.self, forKey: .mass) {
       mass = Int(massString)
     }
 
@@ -145,7 +155,7 @@ class StargazerPerson: StargazerModel {
 // MARK: -
 // MARK: Specie -
 
-class StargazerSpecie: StargazerModel {
+class StargazerSpecie: StargazerBaseModel {
   var classification: String? // string -- The classification of this species, such as "mammal" or "reptile".
   var designation: String? // string -- The designation of this species, such as "sentient".
   var averageHeight: Int? // string -- The average height of this species in centimeters.
@@ -185,11 +195,11 @@ class StargazerSpecie: StargazerModel {
     classification = try values.decodeIfPresent(String.self, forKey: .classification)
     designation = try values.decodeIfPresent(String.self, forKey: .designation)
 
-    if let heightString = try values.decodeIfPresent(Int.self, forKey: .averageHeight) {
+    if let heightString = try values.decodeIfPresent(String.self, forKey: .averageHeight) {
       averageHeight = Int(heightString)
     }
 
-    if let lifeString = try values.decodeIfPresent(Int.self, forKey: .averageLifespan) {
+    if let lifeString = try values.decodeIfPresent(String.self, forKey: .averageLifespan) {
       averageLifespan = Int(lifeString)
     }
 
@@ -211,7 +221,7 @@ class StargazerSpecie: StargazerModel {
 // MARK: -
 // MARK: Film -
 
-class StargazerFilm: StargazerModel {
+class StargazerFilm: StargazerBaseModel {
   var title: String? // string -- The title of this film
   var episodeId: Int? // integer -- The episode number of this film.
   var openingCrawl: String? // string -- The opening paragraphs at the beginning of this film.
@@ -248,7 +258,7 @@ class StargazerFilm: StargazerModel {
     openingCrawl = try values.decodeIfPresent(String.self, forKey: .openingCrawl)
     director = try values.decodeIfPresent(String.self, forKey: .director)
 
-    if let idString = try values.decodeIfPresent(Int.self, forKey: .episodeId) {
+    if let idString = try values.decodeIfPresent(String.self, forKey: .episodeId) {
       episodeId = Int(idString)
     }
 
@@ -278,7 +288,7 @@ class StargazerFilm: StargazerModel {
 // MARK: -
 // MARK: Starship -
 
-class StargazerStarship: StargazerModel {
+class StargazerStarship: StargazerBaseModel {
   var vessel: StargazerVessel?
 
   var starshipClass: String? // string -- The class of this starship, such as "Starfighter" or "Deep Space Mobile Battlestation"
@@ -302,7 +312,7 @@ class StargazerStarship: StargazerModel {
       print(error)
     }
 
-    if let dblRating = try values.decodeIfPresent(Double.self, forKey: .hyperdriveRating) {
+    if let dblRating = try values.decodeIfPresent(String.self, forKey: .hyperdriveRating) {
       hyperdriveRating = Double(dblRating)
     }
 
@@ -341,7 +351,7 @@ class StargazerVehicle: StargazerModel {
 // MARK: -
 // MARK: Planet -
 
-class StargazerPlanet: StargazerModel {
+class StargazerPlanet: StargazerBaseModel {
   var diameter: UInt? // string -- The diameter of this planet in kilometers.
   var rotationPeriod: Int? // string -- The number of standard hours it takes for this planet to complete a single rotation on its axis.
   var orbitalPeriod: Int? // string -- The number of standard days it takes for this planet to complete a single orbit of its local star.
@@ -375,23 +385,23 @@ class StargazerPlanet: StargazerModel {
     category = .planets
     let values = try decoder.container(keyedBy: CodingKeys.self)
 
-    if let uintDiameter = try values.decodeIfPresent(UInt.self, forKey: .diameter) {
+    if let uintDiameter = try values.decodeIfPresent(String.self, forKey: .diameter) {
       diameter = UInt(uintDiameter)
     }
 
-    if let intRot = try values.decodeIfPresent(Int.self, forKey: .rotationPeriod) {
+    if let intRot = try values.decodeIfPresent(String.self, forKey: .rotationPeriod) {
       rotationPeriod = Int(intRot)
     }
 
-    if let intOrb = try values.decodeIfPresent(Int.self, forKey: .orbitalPeriod) {
+    if let intOrb = try values.decodeIfPresent(String.self, forKey: .orbitalPeriod) {
       orbitalPeriod = Int(intOrb)
     }
 
-    if let intGravity = try values.decodeIfPresent(Int.self, forKey: .gravity) {
+    if let intGravity = try values.decodeIfPresent(String.self, forKey: .gravity) {
       gravity = Int(intGravity)
     }
 
-    if let uintPop = try values.decodeIfPresent(UInt.self, forKey: .population) {
+    if let uintPop = try values.decodeIfPresent(String.self, forKey: .population) {
       population = UInt(uintPop)
     }
 

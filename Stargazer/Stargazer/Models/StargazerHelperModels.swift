@@ -44,7 +44,14 @@ class UrlStringItem: Decodable {
     guard let components = URLComponents(url: aUrl, resolvingAgainstBaseURL: true) else {
       return (url: resultUrl, id: resultId)
     }
-    if let lastPart = components.path.components(separatedBy: "/").last { resultId = Int(lastPart) }
+    let parts = components.path.components(separatedBy: "/")
+    for part in parts {
+      if let aInt = Int(part) {
+        resultId = aInt
+        break
+      }
+    }
+//    if let lastPart = parts.last { resultId = Int(lastPart) }
     return (url: resultUrl, id: resultId)
   }
 }
@@ -95,6 +102,15 @@ class CSVStringItems: Decodable {
       let csvItems = try container.decode(String.self)
       items = csvItems.components(separatedBy: ",")
     } catch {}
+  }
+}
+
+extension CSVStringItems: CustomStringConvertible {
+  public var description: String {
+    if let aItems = items {
+      return aItems.joined(separator: ",")
+    }
+    return "N/A"
   }
 }
 
@@ -230,23 +246,23 @@ class StargazerVessel: StargazerObjectModel {
 
     manufacturer = try values.decodeIfPresent(CSVStringItems.self, forKey: .manufacturer)
 
-    if let intLength = try values.decodeIfPresent(Int.self, forKey: .length) {
+    if let intLength = try values.decodeIfPresent(String.self, forKey: .length) {
       length = Int(intLength)
     }
 
-    if let uintCost = try values.decodeIfPresent(Int.self, forKey: .costInCredits) {
+    if let uintCost = try values.decodeIfPresent(String.self, forKey: .costInCredits) {
       costInCredits = UInt(uintCost)
     }
 
-    if let uintCargo = try values.decodeIfPresent(Int.self, forKey: .cargoCapacity) {
+    if let uintCargo = try values.decodeIfPresent(String.self, forKey: .cargoCapacity) {
       cargoCapacity = UInt(uintCargo)
     }
 
-    if let intCrew = try values.decodeIfPresent(Int.self, forKey: .crew) {
+    if let intCrew = try values.decodeIfPresent(String.self, forKey: .crew) {
       crew = Int(intCrew)
     }
 
-    if let intPass = try values.decodeIfPresent(Int.self, forKey: .passengers) {
+    if let intPass = try values.decodeIfPresent(String.self, forKey: .passengers) {
       passengers = Int(intPass)
     }
 

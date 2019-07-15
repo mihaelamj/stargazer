@@ -8,6 +8,13 @@
 
 import Foundation
 
+//{
+//  "count": 87,
+//  "next": "https://swapi.co/api/people/?page=2",
+//  "previous": null,
+//  "results": []
+//}
+
 func testProps() {
   let model = StargazerModel(name: "Name", category: .planets, created: Date(), urlString: "https://swapi.co/api/films/1/")
 
@@ -29,6 +36,43 @@ func testProps() {
 
   let props = model.getAllPropertyValues()
   print("props \(props)")
+}
+
+func testAPIAll() {
+  StargazerCategory.fetchFilms { (films, error) in
+    if let aFilms = films {
+      if let aFlm = aFilms.first {
+        let props = aFlm.getAllPropertyValues()
+      }
+    }
+    if let aError = error {
+      debugPrint("error: \(aError)")
+    }
+  }
+}
+
+func testAPI() {
+  StargazerCategory.fetchFilm(id: 1) { film, error in
+    if let aFlm = film {
+      let props = aFlm.getAllPropertyValues()
+      debugPrint("props: \(props)")
+    }
+    if let aError = error {
+      debugPrint("error: \(aError)")
+    }
+  }
+}
+
+func testAPIStarship() {
+  StargazerCategory.fetchStarship(id: 9) { starship, error in
+    if let aStarship = starship {
+      let props = aStarship.getAllPropertyValues()
+      debugPrint("props: \(props)")
+    }
+    if let aError = error {
+      debugPrint("error: \(aError)")
+    }
+  }
 }
 
 extension String {
@@ -67,10 +111,9 @@ extension String {
 extension StargazerObjectModel {
   typealias PropertyTouple = (name: String, value: String, index: Int)
 
-  func getAllPropertyValues() -> [PropertyTouple] {
-    let mirroredObject = Mirror(reflecting: self)
+  func processMirrorObject(_ mirror: Mirror) -> [PropertyTouple] {
     var result = [PropertyTouple]()
-    for (index, attr) in mirroredObject.children.enumerated() {
+    for (index, attr) in mirror.children.enumerated() {
       if let name = attr.label {
         if let aVessel = attr.value as? StargazerVessel {
           let vesselProperties = aVessel.getAllPropertyValues()
@@ -84,5 +127,21 @@ extension StargazerObjectModel {
     }
     return result
   }
+
+  func getAllPropertyValues() -> [PropertyTouple] {
+    var mirror: Mirror? = Mirror(reflecting: self)
+    var result = [PropertyTouple]()
+
+    repeat {
+      if let aMirror = mirror {
+        let props = processMirrorObject(aMirror)
+        result.append(contentsOf: props)
+        mirror = aMirror.superclassMirror
+      }
+    } while mirror != nil
+
+    return result
+  }
 }
+
 

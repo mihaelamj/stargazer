@@ -27,7 +27,7 @@ extension StargazerCategory {
   }
 
   func pathWithId(_ id: Int) -> String {
-    return "\(path)/\(id)"
+    return "\(path)\(id)"
   }
 }
 
@@ -40,6 +40,10 @@ private extension StargazerCategory {
         debugPrint("response: \(String(describing: response))")
         completion(nil, err)
       } else {
+        if let aData = data {
+          let str = String(data: aData, encoding: .utf8)
+          debugPrint("\(String(describing: str))")
+        }
         completion(data, nil)
       }
     }
@@ -54,6 +58,8 @@ private extension StargazerCategory {
       completion(nil, nil)
       return
     }
+
+    debugPrint("url: \(url)")
 
     // make request
     var request = URLRequest(url: url)
