@@ -81,8 +81,8 @@ enum APIResult<T> {
 
 private extension StargazerCategory {
 
-  func fetchAll<T>(id: Int?, completion: @escaping (_ items: [T]?, _ error: Error?) -> Void) where T: Decodable {
-    execute(id: id) { data, error in
+  func fetchAll<T>(completion: @escaping (_ items: [T]?, _ error: Error?) -> Void) where T: Decodable {
+    execute(id: nil) { data, error in
       if let aData = data {
         do {
           let result = try JSONDecoder().decode([T].self, from: aData)
@@ -110,5 +110,81 @@ private extension StargazerCategory {
       }
     }
   }
+}
+
+extension StargazerCategory {
+
+  static func fetchPeople(completion: @escaping (_ items: [StargazerPerson]?, _ error: Error?) -> Void) {
+    StargazerCategory.people.fetchAll { allItems, error in
+      completion(allItems, error)
+    }
+  }
+
+  static func fetchPerson(id: Int, completion: @escaping (_ item: StargazerPerson?, _ error: Error?) -> Void) {
+    StargazerCategory.people.fetchOne(id: id) { oneItem, error in
+      completion(oneItem, error)
+    }
+  }
+
+  static func fetchSpecies(completion: @escaping (_ items: [StargazerSpecie]?, _ error: Error?) -> Void) {
+    StargazerCategory.species.fetchAll { allItems, error in
+      completion(allItems, error)
+    }
+  }
+
+  static func fetchSpecie(id: Int, completion: @escaping (_ item: StargazerSpecie?, _ error: Error?) -> Void) {
+    StargazerCategory.species.fetchOne(id: id) { oneItem, error in
+      completion(oneItem, error)
+    }
+  }
+
+  static func fetchFilms(completion: @escaping (_ items: [StargazerFilm]?, _ error: Error?) -> Void) {
+    StargazerCategory.films.fetchAll { allItems, error in
+      completion(allItems, error)
+    }
+  }
+
+  static func fetchFilm(id: Int, completion: @escaping (_ item: StargazerFilm?, _ error: Error?) -> Void) {
+    StargazerCategory.films.fetchOne(id: id) { oneItem, error in
+      completion(oneItem, error)
+    }
+  }
+
+  static func fetchStarships(completion: @escaping (_ items: [StargazerStarship]?, _ error: Error?) -> Void) {
+    StargazerCategory.starships.fetchAll { allItems, error in
+      completion(allItems, error)
+    }
+  }
+
+  static func fetchStarship(id: Int, completion: @escaping (_ item: StargazerStarship?, _ error: Error?) -> Void) {
+    StargazerCategory.starships.fetchOne(id: id) { oneItem, error in
+      completion(oneItem, error)
+    }
+  }
+
+  static func fetchVehicles(completion: @escaping (_ items: [StargazerVehicle]?, _ error: Error?) -> Void) {
+    StargazerCategory.vehicles.fetchAll { allItems, error in
+      completion(allItems, error)
+    }
+  }
+
+  static func fetchVehicle(id: Int, completion: @escaping (_ item: StargazerVehicle?, _ error: Error?) -> Void) {
+    StargazerCategory.vehicles.fetchOne(id: id) { oneItem, error in
+      completion(oneItem, error)
+    }
+  }
+
+  static func fetchPlanets(completion: @escaping (_ items: [StargazerPlanet]?, _ error: Error?) -> Void) {
+    StargazerCategory.planets.fetchAll { allItems, error in
+      completion(allItems, error)
+    }
+  }
+
+  static func fetchPlanet(id: Int, completion: @escaping (_ item: StargazerPlanet?, _ error: Error?) -> Void) {
+    StargazerCategory.planets.fetchOne(id: id) { oneItem, error in
+      completion(oneItem, error)
+    }
+  }
 
 }
+
