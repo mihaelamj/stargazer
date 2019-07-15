@@ -56,6 +56,13 @@ class StargazerModel: Codable {
 
     name = try values.decodeIfPresent(String.self, forKey: .name)
   }
+
+  init(name: String, category: StargazerCategory, created: Date, urlString: UrlStringItem) {
+    self.name = name
+    self.category = category
+    self.created = Date()
+    self.urlString = UrlStringItem
+  }
 }
 
 // MARK: -
@@ -130,7 +137,6 @@ class StargazerPerson: StargazerModel {
 
     vehicles = try values.decodeIfPresent(UrlStringItems.self, forKey: .vehicles)
     if let aVehicles = vehicles { aVehicles.category = .vehicles }
-
   }
 }
 

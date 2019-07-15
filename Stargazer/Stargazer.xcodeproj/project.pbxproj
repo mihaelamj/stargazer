@@ -20,6 +20,7 @@
 		A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DB22DBD30600E26661 /* DateUtil.swift */; };
 		A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DD22DBDFE800E26661 /* String+Helpers.swift */; };
 		A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */; };
+		A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A980B0DB22DBD30600E26661 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		A980B0DD22DBDFE800E26661 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerHelperModels.swift; sourceTree = "<group>"; };
+		A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerModelProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +91,9 @@
 				A980B0D522DBB2E700E26661 /* StargazerConstants.swift */,
 				A980B0DD22DBDFE800E26661 /* String+Helpers.swift */,
 				A980B0D722DBB38A00E26661 /* StargazerCategoryItemListAdapter.swift */,
-				A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */,
 				A980B0DB22DBD30600E26661 /* DateUtil.swift */,
+				A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */,
+				A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */,
 				A980B0D922DBB4DD00E26661 /* StargazerModels.swift */,
 			);
 			path = Models;
@@ -169,6 +172,7 @@
 			files = (
 				A980B0D122DBABB900E26661 /* StargazerCategories.swift in Sources */,
 				A980B0D422DBADF800E26661 /* StargazerImages.swift in Sources */,
+				A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */,
 				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,
 				A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,

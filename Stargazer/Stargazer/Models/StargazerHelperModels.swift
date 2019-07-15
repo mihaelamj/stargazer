@@ -21,20 +21,33 @@ class UrlStringItem: Decodable {
     let container = try decoder.singleValueContainer()
     do {
       urlString = try container.decode(String.self)
-      if let aUrlString = urlString {
-        url = URL(string: aUrlString)
-        if let baseUrl = URL(string: StargazerConstants.baseURL) {
-          if let components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true) {
-            //path : "/api/v1.0"
-            if let lastPart = components.path.components(separatedBy: "/").last {
-              id = Int(lastPart)
-            }
-          }
-        }
+      if let aUrlStr = urlString {
+        let props = UrlStringItem.getUrlProperties(string: aUrlStr)
+        url = props.url
+        id = props.id
       }
 
     } catch {}
   }
+
+  init(string: String) {
+    urlString = string
+    let props = UrlStringItem.getUrlProperties(string: string)
+    url = props.url
+    id = props.id
+  }
+
+  private static func getUrlProperties(string: String) -> (url: URL?, id: Int?) {
+    var resultUrl: URL?; var resultId: Int?
+    guard let aUrl = URL(string: string) else { return (url: resultUrl, id: resultId) }
+    resultUrl = aUrl
+    guard let components = URLComponents(url: aUrl, resolvingAgainstBaseURL: true) else {
+      return (url: resultUrl, id: resultId)
+    }
+    if let lastPart = components.path.components(separatedBy: "/").last { resultId = Int(lastPart) }
+    return (url: resultUrl, id: resultId)
+  }
+
 }
 
 class UrlStringItems: Decodable {
