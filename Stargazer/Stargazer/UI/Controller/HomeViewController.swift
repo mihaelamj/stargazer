@@ -109,4 +109,11 @@ extension HomeViewController: UITableViewDelegate {
     return headerView
   }
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let item = itemAt(indexPath.section) else { return }
+    debugPrint("item: \(item)")
+    //To wake up the UI, Apple issue with cells with selectionStyle = .none
+    CFRunLoopWakeUp(CFRunLoopGetCurrent())
+  }
+
 }

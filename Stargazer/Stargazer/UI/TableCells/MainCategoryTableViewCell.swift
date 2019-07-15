@@ -24,6 +24,10 @@ class MainCategoryTableViewCell: BaseTableViewCell {
   // MARK: -
   // MARK: Template -
 
+  override func setupViews() {
+    selectionStyle = .none
+  }
+
   override func customize(any: Any?) {
     guard let data = any as? StargazerCategoryAdapter else {
       preconditionFailure("Wrong class passed to function: expecting `SearchResultModel`!")

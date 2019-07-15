@@ -10,8 +10,6 @@ import UIKit
 
 extension UITableView {
 
-  //MARK: Cell -
-
   func registerCell<Cell: UITableViewCell>(_ cellClass: Cell.Type) {
     register(cellClass, forCellReuseIdentifier: String(describing: cellClass))
   }
