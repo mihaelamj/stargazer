@@ -8,13 +8,6 @@
 
 import Foundation
 
-//http https://swapi.co/api/people/1/
-//http https://swapi.co/api/films/1/
-//http https://swapi.co/api/starships/9/
-//http https://swapi.co/api/vehicles/4/
-//http https://swapi.co/api/species/3/
-//http https://swapi.co/api/planets/1/
-
 enum StargazerCategory: String, CaseIterable {
   case people
   case films

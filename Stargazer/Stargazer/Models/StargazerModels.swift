@@ -12,7 +12,6 @@ import Foundation
 // MARK: Main Model -
 
 class StargazerObjectModel {
-
 }
 
 class StargazerModel: StargazerObjectModel, Codable {
@@ -37,7 +36,6 @@ class StargazerModel: StargazerObjectModel, Codable {
 
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
-
 
     try container.encode(name, forKey: .name)
 //    try container.encode(urlString, forKey: .urlString)

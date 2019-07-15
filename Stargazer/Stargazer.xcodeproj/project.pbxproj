@@ -21,6 +21,7 @@
 		A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DD22DBDFE800E26661 /* String+Helpers.swift */; };
 		A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */; };
 		A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */; };
+		A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0E322DC0A0E00E26661 /* StargazerAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A980B0DD22DBDFE800E26661 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A980B0DF22DBF07C00E26661 /* StargazerHelperModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerHelperModels.swift; sourceTree = "<group>"; };
 		A980B0E122DBF6AA00E26661 /* StargazerModelProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerModelProperties.swift; sourceTree = "<group>"; };
+		A980B0E322DC0A0E00E26661 /* StargazerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StargazerAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				A980B0D222DBABC600E26661 /* Models */,
+				A980B0E522DC0A1300E26661 /* Plumbing */,
 				A980B0BE22DBAB6100E26661 /* AppDelegate.swift */,
 				A980B0C022DBAB6100E26661 /* ViewController.swift */,
 				A980B0C222DBAB6100E26661 /* Main.storyboard */,
@@ -97,6 +100,14 @@
 				A980B0D922DBB4DD00E26661 /* StargazerModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A980B0E522DC0A1300E26661 /* Plumbing */ = {
+			isa = PBXGroup;
+			children = (
+				A980B0E322DC0A0E00E26661 /* StargazerAPI.swift */,
+			);
+			path = Plumbing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
 				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
 				A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */,
+				A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */,
 				A980B0BF22DBAB6100E26661 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
