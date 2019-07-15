@@ -47,7 +47,24 @@ class UrlStringItem: Decodable {
     if let lastPart = components.path.components(separatedBy: "/").last { resultId = Int(lastPart) }
     return (url: resultUrl, id: resultId)
   }
+}
 
+extension UrlStringItem: CustomStringConvertible {
+  public var description: String {
+    var result = ""
+    if let aUrl = url {
+      result = "\(aUrl)"
+    } else if let aUrlString = urlString {
+      result = "-" + aUrlString
+    }
+    if let aCat = category {
+      result = result + ", c= \(aCat)"
+    }
+    if let aId = id {
+      result = result + ", id= \(aId)"
+    }
+    return result
+  }
 }
 
 class UrlStringItems: Decodable {
@@ -99,6 +116,13 @@ enum StargazerPersonColorType: String, CaseIterable {
       self = .color
     }
   }
+
+}
+
+extension StargazerPersonColorType: CustomStringConvertible {
+  public var description: String {
+    return "\(rawValue)"
+  }
 }
 
 struct StargazerPersonColor: Decodable {
@@ -112,6 +136,16 @@ struct StargazerPersonColor: Decodable {
       type = StargazerPersonColorType(with: item)
       if type == .color { value = item }
     } catch {}
+  }
+}
+
+extension StargazerPersonColor: CustomStringConvertible {
+  public var description: String {
+    var result = type.rawValue
+    if let aValue = value {
+      result = result + ": \(aValue)"
+    }
+    return result
   }
 }
 
@@ -139,10 +173,16 @@ enum StargazerGender: String, CaseIterable {
   }
 }
 
+extension StargazerGender: CustomStringConvertible {
+  public var description: String {
+    return "\(rawValue)"
+  }
+}
+
 // MARK: -
 // MARK: Vessel -
 
-class StargazerVessel: Codable {
+class StargazerVessel: StargazerObjectModel, Codable {
   var model: String? // string -- The model or official name of this starship. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station".
   var manufacturer: CSVStringItems? // string -- The manufacturer of this starship. Comma separated if more than one. "Imperial Department of Military Research, Sienar Fleet Systems"
   var length: Int? // string -- The length of this starship in meters.

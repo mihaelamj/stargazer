@@ -23,3 +23,9 @@ enum StargazerCategory: String, CaseIterable {
   case species
   case planets
 }
+
+extension StargazerCategory: CustomStringConvertible {
+  public var description: String {
+    return "\(rawValue)"
+  }
+}

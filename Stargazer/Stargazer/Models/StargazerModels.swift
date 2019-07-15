@@ -11,7 +11,11 @@ import Foundation
 // MARK: -
 // MARK: Main Model -
 
-class StargazerModel: Codable {
+class StargazerObjectModel {
+
+}
+
+class StargazerModel: StargazerObjectModel, Codable {
   var category: StargazerCategory? {
     didSet {
       if let aUrlsString = urlString {
@@ -57,11 +61,11 @@ class StargazerModel: Codable {
     name = try values.decodeIfPresent(String.self, forKey: .name)
   }
 
-  init(name: String, category: StargazerCategory, created: Date, urlString: UrlStringItem) {
+  init(name: String, category: StargazerCategory, created: Date, urlString: String) {
     self.name = name
     self.category = category
-    self.created = Date()
-    self.urlString = UrlStringItem
+    self.created = created
+    self.urlString = UrlStringItem(string: urlString)
   }
 }
 
