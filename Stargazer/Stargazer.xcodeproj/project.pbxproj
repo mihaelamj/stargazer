@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A980B0BF22DBAB6100E26661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0BE22DBAB6100E26661 /* AppDelegate.swift */; };
-		A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980B0C022DBAB6100E26661 /* ViewController.swift */; };
 		A980B0C422DBAB6100E26661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A980B0C222DBAB6100E26661 /* Main.storyboard */; };
 		A980B0C622DBAB6600E26661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A980B0C522DBAB6600E26661 /* Assets.xcassets */; };
 		A980B0C922DBAB6600E26661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A980B0C722DBAB6600E26661 /* LaunchScreen.storyboard */; };
@@ -49,7 +48,6 @@
 /* Begin PBXFileReference section */
 		A980B0BB22DBAB6100E26661 /* Stargazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A980B0BE22DBAB6100E26661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A980B0C022DBAB6100E26661 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A980B0C322DBAB6100E26661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A980B0C522DBAB6600E26661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A980B0C822DBAB6600E26661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				A980B0D222DBABC600E26661 /* Models */,
 				A980B0E522DC0A1300E26661 /* Plumbing */,
 				A980B0BE22DBAB6100E26661 /* AppDelegate.swift */,
-				A980B0C022DBAB6100E26661 /* ViewController.swift */,
 				A980B0C222DBAB6100E26661 /* Main.storyboard */,
 				A980B0C522DBAB6600E26661 /* Assets.xcassets */,
 				A980B0C722DBAB6600E26661 /* LaunchScreen.storyboard */,
@@ -310,7 +307,6 @@
 				A9AEE46722DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift in Sources */,
 				A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */,
 				A9AEE46122DD164E006B7DE3 /* CircleInitialLabel.swift in Sources */,
-				A980B0C122DBAB6100E26661 /* ViewController.swift in Sources */,
 				A980B0E022DBF07C00E26661 /* StargazerHelperModels.swift in Sources */,
 				A9AEE46E22DD35E2006B7DE3 /* NetworkActivityIndicator.swift in Sources */,
 				A980B0D622DBB2E700E26661 /* StargazerConstants.swift in Sources */,
