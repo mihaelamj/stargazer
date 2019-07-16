@@ -49,13 +49,13 @@ class ItemDetailViewController: BaseViewController {
 
 private extension ItemDetailViewController {
   func setupTableView() {
-//    tableView.delegate = self
-//    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.dataSource = self
     registerCells()
     tableView.rowHeight = 118.0 //****
     tableView.tableFooterView = UIView()
     tableView.showsVerticalScrollIndicator = false
-    tableView.backgroundColor = view.backgroundColor
+    tableView.backgroundColor = .black
   }
 }
 
@@ -92,4 +92,52 @@ private extension ItemDetailViewController {
       tableView.reloadData()
     }
   }
+}
+
+// MARK: -
+// MARK: UITableViewDataSource -
+
+extension ItemDetailViewController: UITableViewDataSource {
+
+  func numberOfSections(in tableView: UITableView) -> Int {
+    guard let aData = data else { return 0 }
+    return aData.count
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let item = itemAt(indexPath.section) else { return UITableViewCell() }
+    let aCell = dequeuTableCell(tableView, cellForRowAt: indexPath)
+    aCell.customize(any: item)
+    return aCell
+  }
+
+}
+
+// MARK: -
+// MARK: UITableViewDelegate -
+
+extension ItemDetailViewController: UITableViewDelegate {
+
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return cellSpacing
+  }
+
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let headerView = UIView()
+    headerView.backgroundColor = .clear
+    return headerView
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let item = itemAt(indexPath.section) else { return }
+    debugPrint("item: \(item)")
+    //To wake up the UI, Apple issue with cells with selectionStyle = .none
+    CFRunLoopWakeUp(CFRunLoopGetCurrent())
+    alert(message: "Item: \(item.name)", title: "Hello", completion: nil)
+  }
+
 }
