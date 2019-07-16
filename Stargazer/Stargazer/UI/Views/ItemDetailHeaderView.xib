@@ -13,12 +13,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailHeaderView" customModule="Stargazer" customModuleProvider="target">
             <connections>
                 <outlet property="circleInitials" destination="dWC-T9-0oD" id="Fwn-AN-WyB"/>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="cWN-Yx-RkL"/>
                 <outlet property="subtitleLabel" destination="V75-Az-OED" id="JfC-ng-ji6"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ItemDetailHeaderView" customModule="Stargazer" customModuleProvider="target">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" userLabel="ContentView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -44,7 +44,7 @@
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="dWC-T9-0oD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="0IX-vq-FOJ"/>
-                <constraint firstItem="dWC-T9-0oD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.56" id="DVY-SS-OZa"/>
+                <constraint firstItem="dWC-T9-0oD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.62" id="DVY-SS-OZa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V75-Az-OED" secondAttribute="trailing" constant="10" id="E8a-IF-WOH"/>
                 <constraint firstItem="dWC-T9-0oD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QIa-83-Edj"/>
                 <constraint firstItem="V75-Az-OED" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wvA-sj-4IC"/>

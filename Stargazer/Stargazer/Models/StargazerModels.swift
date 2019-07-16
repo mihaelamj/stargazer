@@ -71,10 +71,17 @@ class StargazerModel: StargazerObjectModel, Codable {
   }
 }
 
-class StargazerBaseModel: StargazerModel, StargazerCategoryItemListAdapterProtocol {
-  func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
-    preconditionFailure("`genericTableView` needs to be overriden by concrete subscasses")
+class StargazerBaseModel: StargazerModel, StargazerCategoryItemListAdapterProtocol, StargazerItemHeaderAdapterProtocol {
+
+  func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    preconditionFailure("`asStargazerItemHeaderAdapter` needs to be overriden by concrete subscasses")
   }
+
+
+  func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
+    preconditionFailure("`asStargazerCategoryItem` needs to be overriden by concrete subscasses")
+  }
+
 }
 
 
@@ -152,12 +159,19 @@ class StargazerPerson: StargazerBaseModel {
     if let aVehicles = vehicles { aVehicles.category = .vehicles }
   }
 
+  // MARK: -
+  // MARK: Adapters -
+
   override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
     let initials = name?.initials(2) ?? ""
     let title = name ?? "n/a"
     let subtitle = birthYear ?? "n/a"
     let date = created?.shortUSDate ?? "n/a"
     return StargazerCategoryItemListAdapter(initials: initials, title: title, subtitle: subtitle, dateCreated: date, category: .people, id: myId)
+  }
+
+  override func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    return StargazerItemHeaderAdapter(initials: name?.initials(2) ?? "", subtitle: birthYear ?? "n/a")
   }
 }
 
@@ -235,7 +249,7 @@ class StargazerSpecie: StargazerBaseModel {
   }
 
   // MARK: -
-  // MARK: Adapter -
+  // MARK: Adapters -
 
   override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
     let initials = name?.initials(2) ?? ""
@@ -243,6 +257,10 @@ class StargazerSpecie: StargazerBaseModel {
     let subtitle = classification ?? "n/a"
     let date = created?.shortUSDate ?? "n/a"
     return StargazerCategoryItemListAdapter(initials: initials, title: title, subtitle: subtitle, dateCreated: date, category: .species, id: myId)
+  }
+
+  override func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    return StargazerItemHeaderAdapter(initials: name?.initials(2) ?? "", subtitle: classification ?? "n/a")
   }
 }
 
@@ -283,6 +301,7 @@ class StargazerFilm: StargazerBaseModel {
     let values = try decoder.container(keyedBy: CodingKeys.self)
 
     title = try values.decodeIfPresent(String.self, forKey: .title)
+    if let aTitle = title { name = aTitle }
     openingCrawl = try values.decodeIfPresent(String.self, forKey: .openingCrawl)
     director = try values.decodeIfPresent(String.self, forKey: .director)
 
@@ -320,6 +339,11 @@ class StargazerFilm: StargazerBaseModel {
     let date = created?.shortUSDate ?? "n/a"
     return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
   }
+
+  override func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    return StargazerItemHeaderAdapter(initials: title?.initials(2) ?? "", subtitle: openingCrawl ?? "n/a")
+  }
+
 }
 
 // MARK: -
@@ -358,7 +382,7 @@ class StargazerStarship: StargazerBaseModel {
   }
 
   // MARK: -
-  // MARK: Adapter -
+  // MARK: Adapters -
 
   override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
     let initials = name?.initials(2) ?? ""
@@ -367,6 +391,13 @@ class StargazerStarship: StargazerBaseModel {
     let date = created?.shortUSDate ?? "n/a"
     return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
   }
+
+  override func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    let manuf = vessel?.manufacturer?.description
+    let initials = name?.initials(2) ?? ""
+    return StargazerItemHeaderAdapter(initials: initials, subtitle: manuf ?? "n/a")
+  }
+
 }
 
 // MARK: -
@@ -396,7 +427,7 @@ class StargazerVehicle: StargazerBaseModel {
   }
 
   // MARK: -
-  // MARK: Adapter -
+  // MARK: Adapters -
 
   override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
     let initials = name?.initials(2) ?? ""
@@ -404,6 +435,10 @@ class StargazerVehicle: StargazerBaseModel {
     let subtitle = vessel?.model ?? "n/a"
     let date = created?.shortUSDate ?? "n/a"
     return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
+  }
+
+  override func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    return StargazerItemHeaderAdapter(initials: name?.initials(2) ?? "", subtitle: vessel?.model ?? "n/a")
   }
 }
 
@@ -475,7 +510,7 @@ class StargazerPlanet: StargazerBaseModel {
   }
 
   // MARK: -
-  // MARK: Adapter -
+  // MARK: Adapters -
 
   override func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
     let initials = name?.initials(2) ?? ""
@@ -483,6 +518,11 @@ class StargazerPlanet: StargazerBaseModel {
     var subtitle = "n/a"; if let aDieametar = diameter { subtitle = String(aDieametar) }
     let date = created?.shortUSDate ?? "n/a"
     return StargazerCategoryItemListAdapter(initials: initials, title: aTitle, subtitle: subtitle, dateCreated: date, category: .films, id: myId)
+  }
+
+  override func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
+    var subtitle = "n/a"; if let aDieametar = diameter { subtitle = String(aDieametar) }
+    return StargazerItemHeaderAdapter(initials: name?.initials(2) ?? "", subtitle: subtitle)
   }
 }
 

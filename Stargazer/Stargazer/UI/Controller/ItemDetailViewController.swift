@@ -40,6 +40,7 @@ class ItemDetailViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
+    setupHeaderView()
     didLoad = true
     reloadData()
   }
@@ -81,8 +82,10 @@ private extension ItemDetailViewController {
   }
 
   func setupHeaderView() {
-    guard let headerView = ItemDetailHeaderView.loadFromNib(withOwner: self) else { return }
+//    guard let headerView = ItemDetailHeaderView.fromNib() else { return }
+//    guard let headerView = ItemDetailHeaderView.loadFromNib(withOwner: self) else { return }
     let headerFrame = CGRect(x: 0, y: 0.0, width: self.view.frame.width, height: headerHeight)
+    let headerView = ItemDetailHeaderView(frame: headerFrame)
     headerView.frame = headerFrame
     tableView.tableHeaderView = headerView
   }
@@ -96,8 +99,10 @@ private extension ItemDetailViewController {
     if didLoad {
       if let aItem = modelItem {
         data = aItem.getAllPropertyValues()
+        // header
         if let aHeader = tableView.tableHeaderView as? ItemDetailHeaderView {
-          aHeader.customize(propertyTouple: aItem)
+          let adapter = aItem.asStargazerItemHeaderAdapter()
+          aHeader.customize(data: adapter)
         }
       }
       tableView.reloadData()

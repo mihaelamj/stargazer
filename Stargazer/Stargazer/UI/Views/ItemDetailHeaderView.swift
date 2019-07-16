@@ -8,14 +8,28 @@
 
 import UIKit
 
-class ItemDetailHeaderView: UIView {
+class ItemDetailHeaderView: NibLoadableView {
+
+  // MARK: -
+  // MARK: Template Overrides -
+
+  @IBOutlet var contentView: UIView!
+  internal override var myContentView: UIView { return contentView }
+
+  // MARK: -
+  // MARK: IB Properties -
+
 
   @IBOutlet weak var circleInitials: CircleInitialLabel!
   @IBOutlet weak var subtitleLabel: UILabel!
+
+  // MARK: -
+  // MARK: Customize -
   
-  public func customize(propertyTouple: StargazerObjectModel.PropertyTouple) {
-    circleInitials.text = propertyTouple.name.initials(2)
-    subtitleLabel.text = propertyTouple.value
+  public func customize(data: StargazerItemHeaderAdapter) {
+    circleInitials.type = .big
+    circleInitials.text = data.initials
+    subtitleLabel.text = data.subtitle
   }
 
 }

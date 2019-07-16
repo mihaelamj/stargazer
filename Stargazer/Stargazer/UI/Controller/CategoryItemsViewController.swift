@@ -96,6 +96,7 @@ private extension CategoryItemsViewController {
     if let aVC = itemsVC {
       self.navigationController?.pushViewController(aVC, animated: true)
       aVC.modelItem = item
+      aVC.title = item.name
       setOperation(inProgress: false)
     } else {
       self.errorAlert(message: "Error showing item!")
@@ -128,7 +129,7 @@ extension CategoryItemsViewController: UITableViewDataSource {
 extension CategoryItemsViewController: UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let item = itemAt(indexPath.section) else { return }
+    guard let item = itemAt(indexPath.row) else { return }
     debugPrint("item: \(item)")
     //To wake up the UI, Apple issue with cells with selectionStyle = .none
     CFRunLoopWakeUp(CFRunLoopGetCurrent())
