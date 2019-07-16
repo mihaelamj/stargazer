@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: -
-// MARK: Helper Models -
+// MARK: UrlStringItem -
 
 class UrlStringItem: Decodable {
   var urlString: String?
@@ -51,7 +51,6 @@ class UrlStringItem: Decodable {
         break
       }
     }
-//    if let lastPart = parts.last { resultId = Int(lastPart) }
     return (url: resultUrl, id: resultId)
   }
 }
@@ -103,6 +102,9 @@ extension UrlStringItems: CustomStringConvertible {
   }
 }
 
+// MARK: -
+// MARK: CSVStringItems -
+
 class CSVStringItems: Decodable {
   var items: [String]?
 
@@ -132,7 +134,8 @@ extension CSVStringItems {
   }
 }
 
-// Will be "unknown" if not known or "n/a" if the person does not have an eye.
+// MARK: -
+// MARK: StargazerPersonColorType -
 
 enum StargazerPersonColorType: String, CaseIterable {
   case unknown = "unknown"
@@ -187,10 +190,9 @@ extension StargazerPersonColor: CustomStringConvertible {
   }
 }
 
-//"eye_colors": "blue, green, yellow, brown, golden, red"
+// MARK: -
+// MARK: StargazerGender -
 
-
-// "Male", "Female" or "unknown", "n/a"
 enum StargazerGender: String, CaseIterable {
   case unknown = "unknown"
   case notAvailable = "n/a"

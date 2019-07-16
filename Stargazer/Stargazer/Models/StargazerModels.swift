@@ -9,10 +9,9 @@
 import Foundation
 
 // MARK: -
-// MARK: Main Model -
+// MARK: Main Models -
 
-class StargazerObjectModel {
-}
+class StargazerObjectModel {}
 
 class StargazerModel: StargazerObjectModel, Codable {
   var category: StargazerCategory? {
@@ -72,16 +71,13 @@ class StargazerModel: StargazerObjectModel, Codable {
 }
 
 class StargazerBaseModel: StargazerModel, StargazerCategoryItemListAdapterProtocol, StargazerItemHeaderAdapterProtocol {
-
   func asStargazerItemHeaderAdapter() -> StargazerItemHeaderAdapter {
     preconditionFailure("`asStargazerItemHeaderAdapter` needs to be overriden by concrete subscasses")
   }
 
-
   func asStargazerCategoryItem() -> StargazerCategoryItemListAdapter {
     preconditionFailure("`asStargazerCategoryItem` needs to be overriden by concrete subscasses")
   }
-
 }
 
 

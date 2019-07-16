@@ -31,7 +31,6 @@
 		A9AEE45E22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE45C22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift */; };
 		A9AEE45F22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AEE45D22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib */; };
 		A9AEE46122DD164E006B7DE3 /* CircleInitialLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46022DD164E006B7DE3 /* CircleInitialLabel.swift */; };
-		A9AEE46422DD16A6006B7DE3 /* CategoryItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46322DD16A6006B7DE3 /* CategoryItemHeaderView.swift */; };
 		A9AEE46722DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */; };
 		A9AEE46822DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */; };
 		A9AEE46A22DD1CCC006B7DE3 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */; };
@@ -72,7 +71,6 @@
 		A9AEE45C22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemsTableViewCell.swift; sourceTree = "<group>"; };
 		A9AEE45D22DD1551006B7DE3 /* CategoryItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemsTableViewCell.xib; sourceTree = "<group>"; };
 		A9AEE46022DD164E006B7DE3 /* CircleInitialLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleInitialLabel.swift; path = ../CircleInitialLabel.swift; sourceTree = "<group>"; };
-		A9AEE46322DD16A6006B7DE3 /* CategoryItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemHeaderView.swift; sourceTree = "<group>"; };
 		A9AEE46522DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		A9AEE46622DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemDetailTableViewCell.xib; sourceTree = "<group>"; };
 		A9AEE46922DD1CCC006B7DE3 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				A9AEE46022DD164E006B7DE3 /* CircleInitialLabel.swift */,
-				A9AEE46322DD16A6006B7DE3 /* CategoryItemHeaderView.swift */,
 				A9CF430C22DD5FAB001854F1 /* NibLoadableView.swift */,
 				A9CF430322DD5337001854F1 /* ItemDetailHeaderView.swift */,
 				A9CF430422DD5337001854F1 /* ItemDetailHeaderView.xib */,
@@ -302,7 +299,6 @@
 				A9AEE45B22DD11A0006B7DE3 /* CategoryItemsViewController.swift in Sources */,
 				A980B0D122DBABB900E26661 /* StargazerCategories.swift in Sources */,
 				A980B0D422DBADF800E26661 /* StargazerImages.swift in Sources */,
-				A9AEE46422DD16A6006B7DE3 /* CategoryItemHeaderView.swift in Sources */,
 				A980B0F822DCE54A00E26661 /* HomeViewController.swift in Sources */,
 				A9AEE46722DD16E2006B7DE3 /* CategoryItemDetailTableViewCell.swift in Sources */,
 				A980B0E222DBF6AA00E26661 /* StargazerModelProperties.swift in Sources */,
