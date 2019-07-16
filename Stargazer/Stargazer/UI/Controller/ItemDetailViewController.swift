@@ -19,6 +19,7 @@ class ItemDetailViewController: BaseViewController {
   // MARK: UI Properties -
 
   private let cellSpacing: CGFloat = 32.0
+  private let headerHeight: CGFloat = 245.0
 
   // MARK: -
   // MARK: Data -
@@ -78,6 +79,13 @@ private extension ItemDetailViewController {
   func registerCells() {
     tableView.registerCellNib(CategoryItemDetailTableViewCell.self)
   }
+
+  func setupHeaderView() {
+    guard let headerView = ItemDetailHeaderView.loadFromNib(withOwner: self) else { return }
+    let headerFrame = CGRect(x: 0, y: 0.0, width: self.view.frame.width, height: headerHeight)
+    headerView.frame = headerFrame
+    tableView.tableHeaderView = headerView
+  }
 }
 
 // MARK: -
@@ -88,6 +96,9 @@ private extension ItemDetailViewController {
     if didLoad {
       if let aItem = modelItem {
         data = aItem.getAllPropertyValues()
+        if let aHeader = tableView.tableHeaderView as? ItemDetailHeaderView {
+          aHeader.customize(propertyTouple: aItem)
+        }
       }
       tableView.reloadData()
     }

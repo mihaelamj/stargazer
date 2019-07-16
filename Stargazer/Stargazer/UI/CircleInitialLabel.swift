@@ -88,7 +88,7 @@ private extension CircleInitialLabel {
     case .big:
       backgroundColor = .lightGray
       textColor = .black
-      font = font.withSize(30)
+      font = font.withSize(50)
       textAlignment = .center
     }
   }

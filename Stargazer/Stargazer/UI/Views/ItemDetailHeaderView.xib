@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemDetailHeaderView" customModule="Stargazer" customModuleProvider="target">
+            <connections>
+                <outlet property="circleInitials" destination="dWC-T9-0oD" id="Fwn-AN-WyB"/>
+                <outlet property="subtitleLabel" destination="V75-Az-OED" id="JfC-ng-ji6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="ItemDetailHeaderView" customModule="Stargazer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TJ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWC-T9-0oD" customClass="CircleInitialLabel" customModule="Stargazer" customModuleProvider="target">
+                    <rect key="frame" x="144" y="21" width="117" height="91"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="typeIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V75-Az-OED" userLabel="detailLabel">
+                    <rect key="frame" x="10" y="198" width="394" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.89813512563705444" green="0.80622177730965006" blue="0.37751789273973563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dWC-T9-0oD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="0IX-vq-FOJ"/>
+                <constraint firstItem="dWC-T9-0oD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.56" id="DVY-SS-OZa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V75-Az-OED" secondAttribute="trailing" constant="10" id="E8a-IF-WOH"/>
+                <constraint firstItem="dWC-T9-0oD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QIa-83-Edj"/>
+                <constraint firstItem="V75-Az-OED" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wvA-sj-4IC"/>
+                <constraint firstItem="V75-Az-OED" firstAttribute="top" secondItem="dWC-T9-0oD" secondAttribute="bottom" constant="15" id="xn9-Xz-B5V"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.825892857142854"/>
+        </view>
+    </objects>
+</document>
