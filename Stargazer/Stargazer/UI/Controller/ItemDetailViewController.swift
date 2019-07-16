@@ -82,8 +82,6 @@ private extension ItemDetailViewController {
   }
 
   func setupHeaderView() {
-//    guard let headerView = ItemDetailHeaderView.fromNib() else { return }
-//    guard let headerView = ItemDetailHeaderView.loadFromNib(withOwner: self) else { return }
     let headerFrame = CGRect(x: 0, y: 0.0, width: self.view.frame.width, height: headerHeight)
     let headerView = ItemDetailHeaderView(frame: headerFrame)
     headerView.frame = headerFrame
