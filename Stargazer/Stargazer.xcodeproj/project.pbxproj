@@ -40,6 +40,7 @@
 		A9AEE46C22DD34CA006B7DE3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46B22DD34CA006B7DE3 /* BaseViewController.swift */; };
 		A9AEE46E22DD35E2006B7DE3 /* NetworkActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46D22DD35E2006B7DE3 /* NetworkActivityIndicator.swift */; };
 		A9AEE47022DD3779006B7DE3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEE46F22DD3779006B7DE3 /* UIViewController+Alert.swift */; };
+		A9CF430222DD448E001854F1 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CF430122DD448E001854F1 /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		A9AEE46B22DD34CA006B7DE3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A9AEE46D22DD35E2006B7DE3 /* NetworkActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicator.swift; sourceTree = "<group>"; };
 		A9AEE46F22DD3779006B7DE3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		A9CF430122DD448E001854F1 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A9AEE46B22DD34CA006B7DE3 /* BaseViewController.swift */,
 				A980B0F722DCE54A00E26661 /* HomeViewController.swift */,
 				A9AEE45A22DD11A0006B7DE3 /* CategoryItemsViewController.swift */,
+				A9CF430122DD448E001854F1 /* ItemDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				A980B0DE22DBDFE800E26661 /* String+Helpers.swift in Sources */,
 				A980B0DC22DBD30600E26661 /* DateUtil.swift in Sources */,
 				A9AEE45E22DD1551006B7DE3 /* CategoryItemsTableViewCell.swift in Sources */,
+				A9CF430222DD448E001854F1 /* ItemDetailViewController.swift in Sources */,
 				A9AEE46C22DD34CA006B7DE3 /* BaseViewController.swift in Sources */,
 				A980B0DA22DBB4DD00E26661 /* StargazerModels.swift in Sources */,
 				A980B0E422DC0A0E00E26661 /* StargazerAPI.swift in Sources */,

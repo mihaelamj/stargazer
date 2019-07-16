@@ -11,6 +11,12 @@ import UIKit
 class CategoryItemDetailTableViewCell: BaseTableViewCell {
 
   // MARK: -
+  // MARK: IB Properties -
+
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var valueLabel: UILabel!
+
+  // MARK: -
   // MARK: Template -
 
   override func setupViews() {
@@ -18,12 +24,16 @@ class CategoryItemDetailTableViewCell: BaseTableViewCell {
   }
 
   override func customize(any: Any?) {
-    guard let data = any as? StargazerCategoryItemListAdapter else {
-      preconditionFailure("Wrong class passed to function: expecting `SearchResultModel`!")
+    guard let data = any as? StargazerObjectModel.PropertyTouple else {
+      preconditionFailure("Wrong class passed to function: expecting `StargazerObjectModel.PropertyTouple`!")
     }
+    nameLabel.text = data.name
+    valueLabel.text = data.value
   }
 
   override func cleanViews() {
+    nameLabel.text = ""
+    valueLabel.text = ""
   }
     
 }

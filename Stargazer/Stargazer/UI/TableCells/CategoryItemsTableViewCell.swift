@@ -24,7 +24,7 @@ class CategoryItemsTableViewCell: BaseTableViewCell {
 
   override func customize(any: Any?) {
     guard let data = any as? StargazerCategoryItemListAdapter else {
-      preconditionFailure("Wrong class passed to function: expecting `SearchResultModel`!")
+      preconditionFailure("Wrong class passed to function: expecting `StargazerCategoryItemListAdapter`!")
     }
     cicleLabel.text = data.initials
     nameLabel.text = data.title

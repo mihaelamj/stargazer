@@ -30,7 +30,7 @@ class MainCategoryTableViewCell: BaseTableViewCell {
 
   override func customize(any: Any?) {
     guard let data = any as? StargazerCategoryAdapter else {
-      preconditionFailure("Wrong class passed to function: expecting `SearchResultModel`!")
+      preconditionFailure("Wrong class passed to function: expecting `StargazerCategoryAdapter`!")
     }
     catImage.image = data.image
     label.text = data.title

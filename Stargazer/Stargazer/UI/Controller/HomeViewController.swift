@@ -56,7 +56,6 @@ private extension HomeViewController {
 // MARK: Helper -
 
 private extension HomeViewController {
-
   func itemAt(_ index: Int) -> StargazerCategory? {
     if data.count > index { return data[index] }
     return nil
@@ -70,7 +69,6 @@ private extension HomeViewController {
   func registerCells() {
     tableView.registerCellNib(MainCategoryTableViewCell.self)
   }
-
 }
 
 // MARK: -
@@ -146,12 +144,6 @@ extension HomeViewController: UITableViewDelegate {
     CFRunLoopWakeUp(CFRunLoopGetCurrent())
 
     fetchItemsFor(item)
-
-//    let vc2: CategoryItemsViewController? = UIViewController.loadFromStoryboard()
-//    if let aVC = vc2 {
-//      debugPrint("v2c: \(aVC)")
-//      navigationController?.pushViewController(aVC, animated: true)
-//    }
   }
 
 }

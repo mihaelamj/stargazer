@@ -31,7 +31,6 @@ class CategoryItemsViewController: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-//    self.title = "STAR WARS API"
     setupTableView()
     didLoad = true
     reloadData()
@@ -49,7 +48,6 @@ private extension CategoryItemsViewController {
     registerCells()
     tableView.rowHeight = 64.0
     tableView.tableFooterView = UIView()
-
     tableView.showsVerticalScrollIndicator = false
     tableView.backgroundColor = view.backgroundColor
   }
@@ -91,7 +89,19 @@ private extension CategoryItemsViewController {
 // MARK: API -
 
 private extension CategoryItemsViewController {
-  
+
+  func showPropertiesFor(_ item: StargazerBaseModel) {
+    setOperation(inProgress: true)
+    let itemsVC: ItemDetailViewController? = UIViewController.loadFromStoryboard()
+    if let aVC = itemsVC {
+      self.navigationController?.pushViewController(aVC, animated: true)
+      aVC.modelItem = item
+      setOperation(inProgress: false)
+    } else {
+      self.errorAlert(message: "Error showing item!")
+      setOperation(inProgress: false)
+    }
+  }
 }
 
 // MARK: -
@@ -122,12 +132,7 @@ extension CategoryItemsViewController: UITableViewDelegate {
     debugPrint("item: \(item)")
     //To wake up the UI, Apple issue with cells with selectionStyle = .none
     CFRunLoopWakeUp(CFRunLoopGetCurrent())
-
-    let vc2: CategoryItemsViewController? = UIViewController.loadFromStoryboard()
-    if let aVC = vc2 {
-      debugPrint("v2c: \(aVC)")
-      navigationController?.pushViewController(aVC, animated: true)
-    }
+    showPropertiesFor(item)
   }
 
 }
