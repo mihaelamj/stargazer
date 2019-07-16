@@ -22,8 +22,6 @@ class NibLoadableView: UIView {
     preconditionFailure("`myContentView` needs to be overriden by concrete subscasses")
   }
 
-//  internal override var myContentView: UIView { return lottieHolderView }
-
   // MARK: -
   // MARK: Init -
 

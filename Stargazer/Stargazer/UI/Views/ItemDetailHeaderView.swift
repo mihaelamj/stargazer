@@ -19,7 +19,6 @@ class ItemDetailHeaderView: NibLoadableView {
   // MARK: -
   // MARK: IB Properties -
 
-
   @IBOutlet weak var circleInitials: CircleInitialLabel!
   @IBOutlet weak var subtitleLabel: UILabel!
 
