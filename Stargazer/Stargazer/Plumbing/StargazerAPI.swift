@@ -18,7 +18,6 @@ extension StargazerCategory {
 
   var path: String {
     return "\(baseURLString)\(rawValue)/"
-//    return baseURLString + rawValue + "/"
   }
 
   func pathWithId(_ id: Int) -> String {
