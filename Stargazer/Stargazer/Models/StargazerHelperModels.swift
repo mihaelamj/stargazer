@@ -93,6 +93,16 @@ class UrlStringItems: Decodable {
   }
 }
 
+extension UrlStringItems: CustomStringConvertible {
+  var description: String {
+    if let aItems = items {
+      let aStrs = aItems.map { return $0.description}
+      return aStrs.joined(separator: ",")
+    }
+    return "N/A"
+  }
+}
+
 class CSVStringItems: Decodable {
   var items: [String]?
 

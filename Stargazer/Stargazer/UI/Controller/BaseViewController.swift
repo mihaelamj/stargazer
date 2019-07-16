@@ -25,6 +25,7 @@ class BaseViewController: UIViewController {
   override public func viewDidLoad() {
     super.viewDidLoad()
     setupActivityIndicator()
+    navigationController?.navigationBar.tintColor = .white
   }
 
 }

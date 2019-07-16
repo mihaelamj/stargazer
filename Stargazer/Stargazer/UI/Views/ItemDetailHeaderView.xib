@@ -34,7 +34,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V75-Az-OED" userLabel="detailLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="model" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V75-Az-OED" userLabel="detailLabel">
                     <rect key="frame" x="10" y="198" width="394" height="25.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <color key="textColor" red="0.89813512563705444" green="0.80622177730965006" blue="0.37751789273973563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -46,9 +46,10 @@
                 <constraint firstItem="dWC-T9-0oD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="0IX-vq-FOJ"/>
                 <constraint firstItem="dWC-T9-0oD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.62" id="DVY-SS-OZa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V75-Az-OED" secondAttribute="trailing" constant="10" id="E8a-IF-WOH"/>
+                <constraint firstItem="V75-Az-OED" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="5" id="PkY-7w-keB"/>
                 <constraint firstItem="dWC-T9-0oD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QIa-83-Edj"/>
                 <constraint firstItem="V75-Az-OED" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wvA-sj-4IC"/>
-                <constraint firstItem="V75-Az-OED" firstAttribute="top" secondItem="dWC-T9-0oD" secondAttribute="bottom" constant="15" id="xn9-Xz-B5V"/>
+                <constraint firstItem="V75-Az-OED" firstAttribute="top" secondItem="dWC-T9-0oD" secondAttribute="bottom" constant="10" id="xn9-Xz-B5V"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
