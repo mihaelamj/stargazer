@@ -8,13 +8,8 @@
 
 import Foundation
 
-//http https://swapi.co/api/people/1/
-//http https://swapi.co/api/films/1/
-//http https://swapi.co/api/starships/9/
-//http https://swapi.co/api/vehicles/4/
-//http https://swapi.co/api/species/3/
-//http https://swapi.co/api/planets/1/
-//  static let baseURL = "https://swapi.co/api/"
+// MARK: -
+// MARK: Base -
 
 extension StargazerCategory {
   var baseURLString: String {
@@ -30,6 +25,9 @@ extension StargazerCategory {
     return "\(path)\(id)"
   }
 }
+
+// MARK: -
+// MARK: Request -
 
 private extension StargazerCategory {
 
@@ -73,22 +71,8 @@ private extension StargazerCategory {
   }
 }
 
-// StargazerPerson
-// StargazerSpecie
-// StargazerFilm
-// StargazerStarship
-// StargazerVehicle
-// StargazerPlanet
-
 // MARK: -
 // MARK: Result -
-
-//{
-//  "count": 87,
-//  "next": "https://swapi.co/api/people/?page=2",
-//  "previous": null,
-//  "results": []
-//}
 
 class StargazerResultDictionary<T>: Decodable where T: Decodable {
   var count: Int?
