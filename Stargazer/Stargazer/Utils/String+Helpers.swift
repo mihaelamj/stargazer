@@ -29,6 +29,11 @@ extension String {
   var caseless: String {
     return trimmingCharacters(in: .whitespaces).lowercased()
   }
+  
+  func equalss(_ str: String) -> Bool {
+    let selfCalseless = caseless; let strCaseless = str.caseless
+    return selfCalseless == strCaseless
+  }
 }
 
 extension String {

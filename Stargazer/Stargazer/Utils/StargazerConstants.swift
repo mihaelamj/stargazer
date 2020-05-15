@@ -10,5 +10,6 @@ import Foundation
 
 struct StargazerConstants {
   static let categoryQuote = "I’ve altered the deal – Pray I don’t alter it any further"
-  static let baseURL = "https://swapi.co/api/"
+  static let baseURL = "https://swapi.dev/api/"
+//  static let baseURL = "https://swapi.co/api/"
 }
